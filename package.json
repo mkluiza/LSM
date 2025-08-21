@@ -4,7 +4,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+        "start": "node server.js",
+        "postinstall": "[ -z \"$GANDI\" ] || NODE_ENV=production npm run build"
     },
     "keywords": [],
     "author": "",
@@ -12,5 +13,9 @@
     "description": "",
     "dependencies": {
         "express": "^5.1.0"
+    },
+    "engines": {
+        "node": "18.x",
+        "npm": "*"
     }
 }
