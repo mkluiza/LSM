@@ -15,3 +15,8 @@ app.use(express.static(__dirname));
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
+// $ ssh { hébergement_id } @git.{ datacenter_id }.gpaas.net 'deploy {repository}.git
+// $ ssh eee0a83c - 7ce1 - 11f0 - bd2b-00163eada87b @git.sd6.gpaas.net 'deploy default.git'
+//  ssh eee0a83c-7ce1-11f0-bd2b-00163eada87b@git.sd6.gpaas.net 'clean default.git'
