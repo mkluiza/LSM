@@ -1,3 +1,8 @@
+
+// if (filePath === './') {
+//     filePath = './index.html';
+// }
+
 const express = require('express');
 const path = require('path');
 
