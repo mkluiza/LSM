@@ -1,0 +1,7 @@
+# Serve index.html automatically when accessing /
+DirectoryIndex index.html
+
+# Redirect /index.html → /
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html
+RewriteRule ^index\.html$ / [R=301,L]
