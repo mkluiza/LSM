@@ -13,8 +13,5 @@
     "description": "",
     "dependencies": {
         "express": "^5.1.0"
-    },
-    "devDependencies": {
-        "pnpm": "^10.15.0"
     }
 }
