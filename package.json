@@ -5,7 +5,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node index.js",
-        "postinstall": "[ -z \"$GANDI\" ] || NODE_ENV=production npm run build"
+        "build": "next build",
+        "postinstall": ""
     },
     "keywords": [],
     "author": "",
@@ -13,5 +14,9 @@
     "dependencies": {
         "express": "^5.1.0"
     },
-    "description": ""
+    "description": "",
+    "engines": {
+        "node": "16.x",
+        "npm": "8.x"
+    }
 }
