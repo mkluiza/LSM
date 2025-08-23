@@ -34,15 +34,15 @@ app.listen(PORT, () => {
 //     "node": ">=18"
 // }
 
-import express from "express";
-import pkg from "pg";
-const { Pool } = pkg;
+// import express from "express";
+// import pkg from "pg";
+// const { Pool } = pkg;
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // set this in env
-});
+// const pool = new Pool({
+//     connectionString: process.env.DATABASE_URL, // set this in env
+// });
 
-const app_counter = express();
+// const app_counter = express();
 
 // increment counter
 // app_counter.get("/api/hit", async (req, res) => {
