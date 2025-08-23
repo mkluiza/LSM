@@ -191,6 +191,44 @@
         background: #e67e22;
         transform: translateY(-2px);
       }
+
+      /* Footer */
+      footer {
+        background: #2c3e50;
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: #f39c12;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #bdc3c7;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #34495e;
+        padding-top: 20px;
+        margin-top: 20px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -248,6 +286,12 @@
         </div>
       </div>
     </main>
+    <footer>
+      <div class="container" style="text-align: center">
+        <p>♥ LSM 2024 ♥   <span id="counter"></span></p>
+      </div>
+    </footer>
+    
   </body>
 </html>
 

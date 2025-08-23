@@ -1059,9 +1059,12 @@
       </div>
     </section>
 
-    <!-- Footer
+    <!-- Footer Section -->
     <footer>
-        <div class -->
+      <div class="container" style="text-align: center">
+        <p>♥ LSM 2024 ♥ <span id="counter"></span></p>
+      </div>
+    </footer>
   </body>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
@@ -1097,8 +1100,26 @@
           }
         );
       });
+
+    // Counter.app
+
+    fetch("/api/hit?site=" + location.hostname + "&path=" + location.pathname)
+      .then((r) => r.json())
+      .then((data) => {
+        document.getElementById("counter").textContent =
+          "Total views: " + data.total;
+      });
+    // <div id="counter">Loading...</div>;
+
+    // fetch("/api/hit?path=" + encodeURIComponent(location.pathname))
+    //   .then((r) => r.json())
+    //   .then((data) => {
+    //     document.getElementById("counter").textContent =
+    //       "Total views: " + data.total;
+    //   })
+    //   .catch(() => {
+    //     document.getElementById("counter").textContent = "Counter unavailable";
+    //   });
   </script>
   <script src="./index.js"></script>
 </html>
-
-<!-- (e.g., #123456) -->
