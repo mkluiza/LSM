@@ -1,4 +1,5 @@
 
+import express from "express";
 // if (filePath === './') {
 //     filePath = './index.html';
 // }
@@ -12,9 +13,14 @@ const PORT = process.env.PORT || 8080;
 // Serve static files from current directory
 app.use(express.static(__dirname));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
 
 
 // $ ssh { hébergement_id } @git.{ datacenter_id }.gpaas.net 'deploy {repository}.git
@@ -34,7 +40,7 @@ app.listen(PORT, () => {
 //     "node": ">=18"
 // }
 
-// import express from "express";
+
 // import pkg from "pg";
 // const { Pool } = pkg;
 
