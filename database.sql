@@ -1,6 +1,6 @@
-CREATE TABLE page_views (
-  site TEXT NOT NULL,
-  path TEXT NOT NULL,
-  views BIGINT NOT NULL DEFAULT 0,
-PRIMARY KEY (site, path)
-);
+-- CREATE TABLE page_views (
+--   site TEXT NOT NULL,
+--   path TEXT NOT NULL,
+--   views BIGINT NOT NULL DEFAULT 0,
+-- PRIMARY KEY (site, path)
+-- );

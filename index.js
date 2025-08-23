@@ -45,23 +45,23 @@ const pool = new Pool({
 const app_counter = express();
 
 // increment counter
-app_counter.get("/api/hit", async (req, res) => {
-    const site = req.query.site || req.hostname;   // use domain or pass it in
-    const path = req.query.path || "/";
+// app_counter.get("/api/hit", async (req, res) => {
+//     const site = req.query.site || req.hostname;   // use domain or pass it in
+//     const path = req.query.path || "/";
 
-    try {
-        const result = await pool.query(
-            `INSERT INTO page_views (site, path, views)
-       VALUES ($1, $2, 1)
-       ON CONFLICT (site, path)
-       DO UPDATE SET views = page_views.views + 1
-       RETURNING views;`,
-            [site, path]
-        );
-        res.json({ total: result.rows[0].views });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "db error" });
-    }
-});
+//     try {
+//         const result = await pool.query(
+//             `INSERT INTO page_views (site, path, views)
+//        VALUES ($1, $2, 1)
+//        ON CONFLICT (site, path)
+//        DO UPDATE SET views = page_views.views + 1
+//        RETURNING views;`,
+//             [site, path]
+//         );
+//         res.json({ total: result.rows[0].views });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ error: "db error" });
+//     }
+// });
 
