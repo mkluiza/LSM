@@ -38,10 +38,18 @@
       }
 
       .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 1.8rem;
         font-weight: bold;
         text-decoration: none;
         color: white;
+      }
+
+      .logo-icon {
+        font-size: 2rem;
+        color: #f39c12;
       }
 
       .nav-links {
@@ -54,6 +62,23 @@
         color: white;
         text-decoration: none;
       }
+
+      .donate-btn {
+        background: #f39c12;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .donate-btn:hover {
+        background: #e67e22;
+        transform: translateY(-2px);
+      }
+
+   
 
       main {
         padding: 140px 2rem 80px;
@@ -152,7 +177,7 @@
         );
         transition: left 0.5s ease;
       }
-       .action-card:hover::before {
+      .action-card:hover::before {
         left: 100%;
       }
 
@@ -177,21 +202,120 @@
         color: #666;
         line-height: 1.6;
       }
-       .donate-btn {
-        background: #f39c12;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
+    
+  /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .mission-content,
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+
+        .actions-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mission-stats {
+          grid-template-columns: 1fr;
+        }
       }
 
-      .donate-btn:hover {
-        background: #e67e22;
-        transform: translateY(-2px);
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
       }
 
+      /* Loading animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid #f39c12;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .don {
+        padding: 60px 20px;
+        background-color: #f8f8f8;
+      }
+
+      .don .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .don-content {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .bank-info {
+        background-color: #fff;
+        padding: 20px;
+        margin: 30px 0;
+        border-left: 5px solid #007b5e;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .bank-info ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .bank-info li {
+        margin-bottom: 10px;
+      }
       /* Footer */
       footer {
         background: #2c3e50;
@@ -232,14 +356,21 @@
     </style>
   </head>
   <body>
-    <header>
+    <header id="header">
       <nav>
-        <a href="index.html" class="logo">Les Samaritains</a>
+        <a href="./index.html" class="logo">
+          <span class="logo-icon"
+            ><img src="./Vista Logos/logo-png.png" width="50" alt="Logo"
+          /></span>
+          Les Samaritains
+        </a>
         <ul class="nav-links">
-          <li><a href="./index.html">Accueil</a></li>
-          <li><a href="./index.html#mission">Missions</a></li>
+          <li><a href="./index.html#accueil">Accueil</a></li>
+          <li><a href="./index.html#mission">Mission</a></li>
           <li><a href="./action.html">Actions</a></li>
+          <li><a href="./index.html#equipe">Équipe</a></li>
           <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="./new.html">Actualités</a></li>
         </ul>
         <a href="./index.html#don" class="donate-btn">💝 Faire un don</a>
         <!-- <button class="mobile-menu" id="mobile-menu">☰</button> -->
