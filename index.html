@@ -3,751 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Les Samaritains - Association d'aide et de solidarité œuvrant depuis 2024 pour les personnes et familles en difficulté à Meaux." />
+    <meta name="theme-color" content="#dc2626" />
     <title>Les Samaritains - Association d'Aide et de Solidarité</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Arial", sans-serif;
-        line-height: 1.6;
-        color: #333;
-        overflow-x: hidden;
-      }
-
-      /* Header */
-      header {
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        color: white;
-        padding: 1rem 0;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        transition: all 0.3s ease;
-      }
-
-      header.scrolled {
-        background: rgba(231, 76, 60, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1.8rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-      }
-
-      .logo-icon {
-        font-size: 2rem;
-        color: #f39c12;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        position: relative;
-      }
-
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #f39c12;
-        transition: width 0.3s ease;
-      }
-
-      .nav-links a:hover::after {
-        width: 100%;
-      }
-
-      .donate-btn {
-        background: #f39c12;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-      }
-
-      .donate-btn:hover {
-        background: #e67e22;
-        transform: translateY(-2px);
-      }
-
-      .mobile-menu {
-        display: none;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        color: white;
-        padding: 120px 0 80px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,50 C250,30 500,70 750,50 C850,40 950,60 1000,50 L1000,100 L0,100 Z"/></svg>')
-          repeat-x;
-        animation: wave 12s infinite linear;
-      }
-
-      @keyframes wave {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .hero-content {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        animation: fadeInUp 1s ease;
-      }
-
-      .hero .subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-        animation: fadeInUp 1s ease 0.3s both;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        animation: fadeInUp 1s ease 0.6s both;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background: #f39c12;
-        color: white;
-        padding: 15px 30px;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background: #e67e22;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .secondary-btn {
-        background: transparent;
-        border: 2px solid white;
-        color: white;
-      }
-
-      .secondary-btn:hover {
-        background: white;
-        color: #e74c3c;
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Mission Section */
-      .mission {
-        padding: 80px 0;
-        background: #f8f9fa;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #e74c3c;
-      }
-
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #666;
-        margin-bottom: 3rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .mission-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .mission-text h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #e74c3c;
-      }
-
-      .mission-text p {
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #555;
-      }
-
-      .mission-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .stat {
-        text-align: center;
-        padding: 1rem;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #e74c3c;
-        display: block;
-      }
-
-      .stat-label {
-        color: #666;
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-      }
-
-      .mission-image {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-      }
-
-      .mission-image img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .mission-image:hover img {
-        transform: scale(1.05);
-      }
-
-      /* Actions Section */
-      .actions {
-        padding: 80px 0;
-        background: white;
-      }
-
-      .actions-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .action-card {
-        background: white;
-        padding: 2.5rem;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        border-top: 4px solid #f39c12;
-      }
-
-      .action-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(243, 156, 18, 0.1),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .action-card:hover::before {
-        left: 100%;
-      }
-
-      .action-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-      }
-
-      .action-icon {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-        color: #f39c12;
-      }
-
-      .action-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: #e74c3c;
-      }
-
-      .action-card p {
-        color: #666;
-        line-height: 1.6;
-      }
-
-      /* Team Section */
-      .team {
-        padding: 80px 0;
-        background: #f8f9fa;
-      }
-
-      .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .team-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .team-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .team-image {
-        width: 100%;
-        height: 250px;
-        background: linear-gradient(135deg, #f39c12 0%, #fff 100%);
-        /* background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); */
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        color: white;
-      }
-
-      .team-info {
-        padding: 1.5rem;
-        text-align: center;
-      }
-
-      .team-info h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        color: #e74c3c;
-      }
-
-      .team-role {
-        color: #f39c12;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
-
-      .team-info p {
-        color: #666;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      /* Contact Section */
-      .contact {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        color: white;
-      }
-
-      .contact-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .contact-form {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 2.5rem;
-        border-radius: 15px;
-        backdrop-filter: blur(10px);
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        font-size: 1rem;
-      }
-
-      .form-group input::placeholder,
-      .form-group textarea::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .form-group select {
-        color: #333;
-      }
-
-      .submit-btn {
-        background: #f39c12;
-        color: white;
-        padding: 12px 30px;
-        border: none;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .submit-btn:hover {
-        background: #e67e22;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .contact-info h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .contact-info p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-
-      .contact-item {
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .contact-item i {
-        font-size: 1.2rem;
-        width: 20px;
-        color: #f39c12;
-      }
-
-      .volunteer-info {
-        background: rgba(243, 156, 18, 0.2);
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-top: 2rem;
-        border-left: 4px solid #f39c12;
-      }
-
-      .volunteer-info h4 {
-        color: #f39c12;
-        margin-bottom: 0.5rem;
-      }
-
-      /* Footer */
-      footer {
-        background: #2c3e50;
-        color: white;
-        padding: 40px 0 20px;
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-section h3 {
-        margin-bottom: 1rem;
-        color: #f39c12;
-      }
-
-      .footer-section p,
-      .footer-section a {
-        color: #bdc3c7;
-        text-decoration: none;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-
-      .footer-section a:hover {
-        color: white;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid #34495e;
-        padding-top: 20px;
-        margin-top: 20px;
-        text-align: center;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .mobile-menu {
-          display: block;
-        }
-
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .hero .subtitle {
-          font-size: 1.1rem;
-        }
-
-        .hero-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .mission-content,
-        .contact-content {
-          grid-template-columns: 1fr;
-        }
-
-        .actions-grid,
-        .team-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .mission-stats {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Loading animation */
-      .loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease;
-      }
-
-      .loading.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-top: 3px solid #f39c12;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .don {
-        padding: 60px 20px;
-        background-color: #f8f8f8;
-      }
-
-      .don .section-title {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .don-content {
-        max-width: 700px;
-        margin: 0 auto;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-
-      .bank-info {
-        background-color: #fff;
-        padding: 20px;
-        margin: 30px 0;
-        border-left: 5px solid #007b5e;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-
-      .bank-info ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .bank-info li {
-        margin-bottom: 10px;
-      }
-    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./public/css/styles.css" />
   </head>
   <body>
     <!-- Loading Screen -->
-    <div class="loading" id="loading">
-      <div class="spinner"></div>
+    <div class="loading-screen">
+      <div class="loading-spinner"></div>
+      <span class="loading-text">Chargement...</span>
     </div>
 
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <div class="mobile-nav-header">
+        <span class="logo-text" style="color: var(--color-text);">Les Samaritains</span>
+        <button class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
+        <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
+        <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
+        <li><a href="#equipe" class="mobile-nav-link">Équipe</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+      </div>
+    </nav>
+
     <!-- Header -->
-    <header id="header">
-      <nav>
-        <a href="#" class="logo">
-          <span class="logo-icon"
-            ><img src="./Vista Logos/logo-png.png" width="50" alt="Logo"
-          /></span>
-          Les Samaritains
-        </a>
-        <ul class="nav-links">
-          <li><a href="./index.html#accueil">Accueil</a></li>
-          <li><a href="./index.html#mission">Mission</a></li>
-          <li><a href="./action.html">Actions</a></li>
-          <li><a href="./index.html#equipe">Équipe</a></li>
-          <li><a href="./index.html#contact">Contact</a></li>
-          <li><a href="./new.html">Actualités</a></li>
-        </ul>
-        <a href="#don" class="donate-btn">💝 Faire un don</a>
-        <button class="mobile-menu" id="mobile-menu">☰</button>
-      </nav>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="#" class="logo">
+            <span class="logo-icon">
+              <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" />
+            </span>
+            <span class="logo-text">Les Samaritains</span>
+          </a>
+          
+          <ul class="nav-links">
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#mission" class="nav-link">Mission</a></li>
+            <li><a href="./action.html" class="nav-link">Actions</a></li>
+            <li><a href="#equipe" class="nav-link">Équipe</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="./new.html" class="nav-link">Actualités</a></li>
+          </ul>
+          
+          <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+          
+          <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
+      <div class="hero-shapes">
+        <div class="hero-shape"></div>
+        <div class="hero-shape"></div>
+        <div class="hero-shape"></div>
+      </div>
+      
       <div class="hero-content">
-        <h1>Ensemble pour la Solidarité</h1>
-        <p class="subtitle">
-          La jeune association Les Samaritains œuvre depuis 2024 pour l'aide aux
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Association solidaire depuis 2024
+        </div>
+        
+        <h1 class="hero-title">
+          Ensemble pour la<br>
+          <span class="hero-title-accent">Solidarité</span>
+        </h1>
+        
+        <p class="hero-description">
+          La jeune association Les Samaritains œuvre pour l'aide aux
           plus démunis et la promotion de la solidarité dans notre communauté.
         </p>
-        <div class="hero-buttons">
-          <a href="./action.html" class="cta-button">Découvrir nos actions</a>
-          <a href="#contact" class="cta-button secondary-btn"
-            >Devenir bénévole</a
-          >
+        
+        <div class="hero-actions">
+          <a href="./action.html" class="btn btn-primary btn-lg">Découvrir nos actions</a>
+          <a href="#contact" class="btn btn-secondary btn-lg">Devenir bénévole</a>
         </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-indicator-mouse"></div>
+        <span>Défiler</span>
       </div>
     </section>
 
     <!-- Mission Section -->
-    <section class="mission" id="mission">
+    <section class="mission section" id="mission">
       <div class="container">
-        <h2 class="section-title">Notre Mission</h2>
-        <p class="section-subtitle">
-          Agir concrètement pour une société plus juste et solidaire
-        </p>
-        <div class="mission-content">
-          <div class="mission-text">
-            <h2>Solidarité et Entraide</h2>
+        <div class="section-header reveal">
+          <span class="section-label">Notre Mission</span>
+          <h2 class="section-title">Agir pour une société plus juste</h2>
+          <p class="section-description">
+            Nous créons un pont entre ceux qui peuvent aider et ceux qui en ont besoin.
+          </p>
+        </div>
+        
+        <div class="mission-grid">
+          <div class="mission-content reveal">
+            <h2>Solidarité & Entraide</h2>
             <p>
               Depuis près d'un an, Les Samaritains s'engagent quotidiennement
               auprès des personnes et familles en difficulté. Notre mission est
@@ -759,75 +136,65 @@
               solidarité est la clé pour construire une société plus juste et
               équitable pour tous.
             </p>
-            <div class="mission-stats">
-              <div class="stat">
-                <span class="stat-number">+100</span>
+            
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-value">+100</span>
                 <span class="stat-label">Personnes aidées</span>
               </div>
-              <div class="stat">
-                <span class="stat-number">10</span>
+              <div class="stat-card">
+                <span class="stat-value">10</span>
                 <span class="stat-label">Bénévoles actifs</span>
               </div>
-              <div class="stat">
-                <span class="stat-number">1 an d'expérience</span>
-                <span class="stat-label">Jeune association </span>
+              <div class="stat-card">
+                <span class="stat-value">1 an</span>
+                <span class="stat-label">d'expérience</span>
               </div>
-              <div class="stat">
-                <span class="stat-number">95%</span>
-                <span class="stat-label">Fonds redistributés</span>
+              <div class="stat-card">
+                <span class="stat-value">95%</span>
+                <span class="stat-label">Fonds redistribués</span>
               </div>
             </div>
           </div>
-          <div class="mission-image">
-            <img
-              src="./Vista Logos/sam_rouge.webp"
-              src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><defs><linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23f39c12;stop-opacity:1' /><stop offset='100%' style='stop-color:%23e67e22;stop-opacity:1' /></linearGradient></defs><rect width='600' height='400' fill='url(%23grad1)'/><circle cx='150' cy='150' r='60' fill='white' opacity='0.3'/><circle cx='450' cy='250' r='80' fill='white' opacity='0.2'/><path d='M200 200 Q300 150 400 200 Q350 250 300 220 Q250 250 200 200' fill='white' opacity='0.15'/><text x='300' y='350' font-family='Arial' font-size='20' fill='white' text-anchor='middle' opacity='0.8'>Solidarité & Entraide</text></svg>"
-              alt="Mission solidarité"
-            />
+          
+          <div class="mission-image reveal reveal-delay-2">
+            <img src="./Vista Logos/sam_rouge.webp" alt="Mission solidarité - Équipe Les Samaritains" />
           </div>
         </div>
       </div>
     </section>
-    <!-- Defi -->
-
-    <!-- section action -->
 
     <!-- Actions Section -->
-    <section class="actions" id="actions">
+    <section class="actions section" id="actions">
       <div class="container">
-        <h2 class="section-title">Nos Actions</h2>
-        <p class="section-subtitle">
-          Des initiatives concrètes pour répondre aux besoins essentiels
-        </p>
+        <div class="section-header reveal">
+          <span class="section-label">Nos Actions</span>
+          <h2 class="section-title">Des initiatives concrètes</h2>
+          <p class="section-description">
+            Répondre aux besoins essentiels des personnes en difficulté.
+          </p>
+        </div>
+        
         <div class="actions-grid">
-          <div class="action-card">
+          <div class="action-card reveal">
             <div class="action-icon">🍽️</div>
             <h3>Aide Alimentaire</h3>
             <p>
               Distribution de colis alimentaires aux familles dans le besoin.
-              Nous organisons des collectes d'aliements pour les personnes en
-              difficulté.
+              Nous organisons des collectes d'aliments pour les personnes en difficulté.
             </p>
           </div>
-          <!-- <div class="action-card">
-            <div class="action-icon">🏠</div>
-            <h3>Hébergement d'Urgence</h3>
-            <p>
-              Accueil temporaire et orientation vers des solutions d'hébergement
-              pour les personnes sans domicile fixe durant les périodes
-              difficiles.
-            </p>
-          </div> -->
-          <div class="action-card">
+          
+          <div class="action-card reveal reveal-delay-1">
             <div class="action-icon">👗</div>
             <h3>Vestimentaire</h3>
             <p>
               Collecte et redistribution de vêtements, chaussures et accessoires
-              pour tous les âges. Vestiaire solidaire ouvert pour ceux qui
-              veulent aider.
+              pour tous les âges. Vestiaire solidaire ouvert à tous.
             </p>
           </div>
-          <div class="action-card">
+          
+          <div class="action-card reveal reveal-delay-2">
             <div class="action-icon">📚</div>
             <h3>Aide Scolaire</h3>
             <p>
@@ -835,7 +202,8 @@
               enfants issus de familles défavorisées.
             </p>
           </div>
-          <div class="action-card">
+          
+          <div class="action-card reveal reveal-delay-3">
             <div class="action-icon">🩺</div>
             <h3>Santé & Bien-être</h3>
             <p>
@@ -843,9 +211,10 @@
               santé préventive.
             </p>
           </div>
-          <div class="action-card">
+          
+          <div class="action-card reveal reveal-delay-4">
             <div class="action-icon">🎭</div>
-            <h3>Activités Sociales en préparation</h3>
+            <h3>Activités Sociales</h3>
             <p>
               Organisation d'événements culturels, sorties et activités pour
               lutter contre l'isolement et créer du lien social.
@@ -856,158 +225,131 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team" id="equipe">
+    <section class="team section" id="equipe">
       <div class="container">
-        <h2 class="section-title">Notre Équipe</h2>
-        <p class="section-subtitle">
-          Des bénévoles passionnés et dévoués à votre service
-        </p>
+        <div class="section-header reveal">
+          <span class="section-label">Notre Équipe</span>
+          <h2 class="section-title">Des bénévoles passionnés</h2>
+          <p class="section-description">
+            Une équipe dévouée et motivée à votre service.
+          </p>
+        </div>
+        
         <div class="team-grid">
-          <div class="team-card">
-            <!-- <div class="team-image"><img src="./Vista Logos/" width="220"  /></div> -->
-            <div class="team-image">👨‍💼</div>
+          <div class="team-card reveal">
+            <div class="team-avatar">👨‍💼</div>
             <div class="team-info">
               <h3>Calin M.</h3>
               <p class="team-role">Président</p>
-              <p>
-                <!-- 👨‍💼 -->
-                Fondateur de l'association, Calin coordonne les actions et
-                développe les partenariats.
-              </p>
+              <p>Fondateur de l'association, coordonne les actions et développe les partenariats.</p>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-image">👩‍💼</div>
+          
+          <div class="team-card reveal reveal-delay-1">
+            <div class="team-avatar">👩‍💼</div>
             <div class="team-info">
               <h3>Madalina M.</h3>
               <p class="team-role">Vice-Présidente</p>
-              <p>
-                Responsable de l'aide alimentaire et de la coordination des
-                bénévoles.
-              </p>
+              <p>Responsable de l'aide alimentaire et de la coordination des bénévoles.</p>
             </div>
           </div>
-          <div class="team-card">
-            <div class="team-image">👨‍🏫</div>
+          
+          <div class="team-card reveal reveal-delay-2">
+            <div class="team-avatar">👨‍🏫</div>
             <div class="team-info">
               <h3>Enzo C.</h3>
               <p class="team-role">Trésorier</p>
-              <p>
-                Gestion financière et administrative de l'association. Comptable
-                bénévole.
-              </p>
+              <p>Gestion financière et administrative de l'association.</p>
             </div>
           </div>
-          <div class="team-card">
-            <!-- <div class="team-image"><img src="./Vista Logos/luiza.png" width="250"  /></div> -->
-            <div class="team-image">👩‍🎓</div>
+          
+          <div class="team-card reveal reveal-delay-3">
+            <div class="team-avatar">👩‍🎓</div>
             <div class="team-info">
               <h3>Luiza M.</h3>
               <p class="team-role">Secrétaire & WebDev</p>
-              <p>
-                Responsable communication, administrations et événements.
-                Coordonne les activités sociales et culturelles.
-              </p>
+              <p>Responsable communication, administration et événements.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- 👩‍🎓 -->
-    <!-- Contact Section -->
 
-    <section class="contact" id="contact">
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
       <div class="container">
-        <h2 class="section-title">Nous Contacter</h2>
-        <div class="contact-content">
-          <div class="contact-form">
-            <h3>Envoyez-nous un message</h3>
+        <div class="section-header reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Nous Contacter</h2>
+          <p class="section-description">
+            Une question ? Envie de rejoindre l'équipe ? Écrivez-nous !
+          </p>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-form-card reveal">
             <form id="contactForm">
               <div class="form-group">
-                <label for="name">Nom complet</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Votre nom et prénom"
-                  required
-                />
+                <label for="name" class="form-label">Nom complet</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom et prénom" required />
               </div>
+              
               <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Votre adresse email"
-                  required
-                />
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required />
               </div>
+              
               <div class="form-group">
-                <label for="phone">Téléphone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Votre numéro de téléphone"
-                />
+                <label for="phone" class="form-label">Téléphone</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 12 34 56 78" />
               </div>
+              
               <div class="form-group">
-                <label for="subject">Sujet</label>
-                <select id="subject" name="subject" required>
+                <label for="subject" class="form-label">Sujet</label>
+                <select id="subject" name="subject" class="form-select" required>
                   <option value="">Choisir un sujet</option>
                   <option value="benevole">Devenir bénévole</option>
-                  <option value="don">
-                    Faire un don / Demander un reçu fiscal
-                  </option>
+                  <option value="don">Faire un don / Reçu fiscal</option>
                   <option value="aide">Demander de l'aide</option>
                   <option value="partenariat">Partenariat</option>
                   <option value="autre">Autre</option>
                 </select>
               </div>
+              
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="Votre message..."
-                  required
-                ></textarea>
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Votre message..." required></textarea>
               </div>
-              <button type="submit" class="submit-btn">
-                Envoyer le message
-              </button>
+              
+              <button type="submit" class="form-submit">Envoyer le message</button>
             </form>
           </div>
-          <div class="contact-info">
-            <h3>Informations de Contact</h3>
+          
+          <div class="contact-info reveal reveal-delay-2">
+            <h3>Informations</h3>
             <p>
               N'hésitez pas à nous contacter pour toute information ou pour
-              rejoindre notre équipe de bénévoles.<br />
-              <br />
-              assoslsm@gmail.com
+              rejoindre notre équipe de bénévoles.
             </p>
-            <div class="contact-item">
-              <i>📍</i>
-              <span
-                >77100 <br />
-                Meaux, France</span
-              >
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item-icon">✉️</div>
+                <span class="contact-item-text">assoslsm@gmail.com</span>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <span class="contact-item-text">77100 Meaux, France</span>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-item-icon">🕒</div>
+                <span class="contact-item-text">Lun-Ven: 9h-17h | Sam: 9h-12h</span>
+              </div>
             </div>
-            <!-- <div class="contact-item">
-              <i>📞</i>
-              <span>01 42 85 67 32</span>
-            </div> -->
-            <!-- <div class="contact-item">
-              <i>✉️</i>
-              <span>contact@lessamaritains.org</span>
-            </div> -->
-            <div class="contact-item">
-              <i>🕒</i>
-              <span>Lun-Ven: 9h-17h<br />Sam: 9h-12h</span>
-            </div>
-            <div class="volunteer-info">
+            
+            <div class="volunteer-cta">
               <h4>Devenir Bénévole</h4>
               <p>
                 Rejoignez notre équipe ! Nous recherchons des bénévoles motivés
@@ -1020,88 +362,48 @@
     </section>
 
     <!-- Donation Section -->
-    <section class="don" id="don">
+    <section class="donation section" id="don">
       <div class="container">
-        <h2 class="section-title">🎁 Faire un Don</h2>
-        <div class="don-content">
+        <div class="donation-card reveal">
+          <div class="donation-icon">🎁</div>
+          <h3>Faire un Don</h3>
           <p>
-            Votre soutien nous permet de continuer à aider ceux qui en ont
-            besoin. Merci pour votre générosité !
+            Votre soutien nous permet de continuer à aider ceux qui en ont besoin.
           </p>
-
-          <div class="bank-info">
+          
+          <div class="donation-info">
             <p>
-              Vous souhaitez soutenir notre association ? <br />
-              Contactez-nous via le formulaire de contact, et nous vous
+              Vous souhaitez soutenir notre association ?<br>
+              Contactez-nous via le formulaire ci-dessus, et nous vous
               transmettrons les informations bancaires pour effectuer un don en
               toute sécurité. Merci pour votre soutien ! 💙
             </p>
-            <!-- <h3>Informations bancaires</h3>
-            <ul>
-              <li>
-                <strong>Nom du bénéficiaire :</strong> Association Les
-                Samaritains
-              </li>
-              <li><strong>IBAN :</strong> FR3008 7338 2200 0209 6210 177</li>
-              <li><strong>BIC / SWIFT :</strong> ...</li>
-              <li><strong>Banque :</strong> ...</li>
-              <li><strong>Objet :</strong> Don Les Samaritains (LSM)</li>
-            </ul> -->
           </div>
-
-          <p style="font-size: small">
-            <i
-              >Si vous souhaitez un reçu fiscal, n'oubliez pas de nous le faire
-              savoir via le formulaire de contact avec votre nom et adresse
-              complète.</i
-            >
+          
+          <p class="donation-note">
+            Si vous souhaitez un reçu fiscal, n'oubliez pas de nous le faire
+            savoir avec votre nom et adresse complète.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-      <div class="container" style="text-align: center">
-        <p>♥ LSM 2024 ♥</p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span>Les Samaritains</span>
+          </div>
+          <p class="footer-text">
+            <span class="footer-heart">♥</span> LSM 2024 <span class="footer-heart">♥</span>
+          </p>
+        </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="./public/js/main.js"></script>
   </body>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    // function handleSubjectChange() {
-    //   const select = document.getElementById("subject");
-    //   const value = select.value;
-
-    //   if (value === "benevole") {
-    //     document
-    //       .getElementById("contact")
-    //       .scrollIntoView({ behavior: "smooth" });
-    //   }
-    // }
-    (function () {
-      emailjs.init("-RxwZb0vBaP6znrIx"); // Remplacez par votre clé publique EmailJS
-    })();
-
-    window.addEventListener("load", function () {
-      document.getElementById("loading").classList.add("hidden");
-    });
-    document
-      .getElementById("contactForm")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        emailjs.sendForm("service_95wcqeh", "template_wt5438o", this).then(
-          function () {
-            alert("Message envoyé avec succès !");
-            document.getElementById("contactForm").reset(); // Reset le formulaire
-          },
-          function (error) {
-            alert("Une erreur est survenue : " + JSON.stringify(error));
-          }
-        );
-      });
-    src = "./index.js";
-  </script>
-  <script></script>
 </html>

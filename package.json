@@ -1,22 +1,24 @@
 {
     "name": "lsm",
     "version": "1.0.0",
+    "description": "Les Samaritains - Association d'Aide et de Solidarité",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node index.js",
-        "build": "next build",
-        "postinstall": ""
+        "dev": "node index.js",
+        "test": "echo \"No tests configured\" && exit 0"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "charity",
+        "solidarity",
+        "association"
+    ],
+    "author": "Les Samaritains",
     "license": "ISC",
     "dependencies": {
         "express": "^5.1.0"
     },
-    "description": "",
     "engines": {
-        "node": "16.x",
-        "npm": "8.x"
+        "node": ">=16.x"
     }
 }

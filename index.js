@@ -1,7 +1,10 @@
 
-// if (filePath === './') {
-//     filePath = './index.html';
-// }
+/**
+ * Les Samaritains (LSM) - Express Server
+ * Simple static file server for the LSM website
+ */
+
+'use strict';
 
 const express = require('express');
 const path = require('path');
@@ -9,23 +12,37 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Serve static files from current directory
-app.use(express.static(__dirname));
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Security headers middleware
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    next();
 });
 
+// Serve static files from current directory
+app.use(express.static(__dirname, {
+    maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0,
+    etag: true
+}));
 
-// $ ssh { hébergement_id } @git.{ datacenter_id }.gpaas.net 'deploy {repository}.git
-// $ ssh eee0a83c - 7ce1 - 11f0 - bd2b-00163eada87b @git.sd6.gpaas.net 'deploy default.git'
-//  ssh eee0a83c-7ce1-11f0-bd2b-00163eada87b@git.sd6.gpaas.net 'clean default.git'
+// Fallback to index.html for SPA-like behavior (Express 5 compatible)
+app.use((req, res, next) => {
+    if (req.accepts('html')) {
+        res.sendFile(path.join(__dirname, 'index.html'));
+    } else {
+        next();
+    }
+});
 
-// git remote add gandi ssh://git@your_git_server/your_app_name.git
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Server error:', err.message);
+    res.status(500).send('Internal Server Error');
+});
 
-// git_server = ssh://git@git.sd6.gpaas.net/vhosts/default/
-// app_name = 
-// user_name_gandi_sftp = eee0a83c-7ce1-11f0-bd2b-00163eada87b
-// host_name_gandi = git.sd6.gpaas.net / sftp.sd6.gpaas.net / ssh.sd6.gpaas.net
-// psswd = Tdw8bky9aP7dZYV
-//  control_panel_user_name+ = 11319408
+// Start server
+app.listen(PORT, () => {
+    console.log(`LSM Server running on http://localhost:${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+});

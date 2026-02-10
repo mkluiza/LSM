@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Action - Les Samaritains</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        color: white;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+
+      .logo-icon {
+        font-size: 2rem;
+        color: #f39c12;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .donate-btn {
+        background: #f39c12;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .donate-btn:hover {
+        background: #e67e22;
+        transform: translateY(-2px);
+      }
+
+      main {
+        padding: 140px 2rem 80px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Footer */
+      footer {
+        background: #2c3e50;
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: #f39c12;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: #bdc3c7;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .footer-section a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #34495e;
+        padding-top: 20px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .mission-content,
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+
+        .actions-grid,
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mission-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Articles menu */
+      .article-card {
+        background-color: #f8f8f8; /* light gray background */
+        border: 1px solid #ddd; /* subtle border */
+        border-radius: 12px; /* rounded corners */
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px; /* adjust square size */
+        aspect-ratio: 1 / 1; /* makes it a square */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 20px;
+        margin-left: 150px;
+      }
+
+      .article-card h2 {
+        margin-bottom: 0.8rem;
+        color: #c0392b;
+        text-align: center;
+      }
+
+      .article-card p,
+      .article-card ul {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        padding: 0.5rem 0;
+        /* padding-left: 40px; */
+        /* text-align: justify; */
+      }
+      .no-bullets {
+        list-style: none; /* removes bullets */
+        padding-left: 0; /* removes default indentation */
+        margin-left: 0; /* optional */
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <nav>
+        <a href="./index.html" class="logo">
+          <span class="logo-icon"
+            ><img src="./Vista Logos/logo-png.png" width="50" alt="Logo"
+          /></span>
+          Les Samaritains
+        </a>
+        <ul class="nav-links">
+          <li><a href="./index.html#accueil">Accueil</a></li>
+          <li><a href="./index.html#mission">Mission</a></li>
+          <li><a href="./action.html">Actions</a></li>
+          <li><a href="./index.html#equipe">Équipe</a></li>
+          <li><a href="./index.html#contact">Contact</a></li>
+          <li><a href="./new.html">Actualités</a></li>
+        </ul>
+        <a href="./index.html#don" class="donate-btn">💝 Faire un don</a>
+        <!-- <button class="mobile-menu" id="mobile-menu">☰</button> -->
+      </nav>
+    </header>
+
+    <main>
+      <section class="article-card">
+        <h1 style="text-align: center">Actualités</h1>
+        <article style="margin-bottom: 2rem">
+          <h2>
+            Proposition du CSEN : simplification de l’accord du participe passé
+          </h2>
+          <p>
+            L’accord du participe passé pour certains, c’est comme coder sans
+            debugger : ça plante à tous les coups. Le
+            <strong
+              >Conseil scientifique de l’éducation nationale (CSEN)</strong
+            >
+            propose de simplifier l'accord du participe passé pour le rendre
+            plus accessible aux élèves et au grand public :
+          </p>
+          <ul class="no-bullets">
+            <li>
+              Avec <strong>avoir</strong> : le participe passé devient
+              <strong>invariable</strong>
+            </li>
+            <li>
+              Avec <strong>être</strong> : accord systématique avec le sujet
+            </li>
+          </ul>
+          <p>
+            Cette réforme vise à réduire la complexité, gagner du temps
+            d’apprentissage et favoriser la maîtrise de la langue française.
+            Elle suscite cependant un débat parmi les linguistes et enseignants,
+            certains souhaitant préserver la subtilité historique de la
+            grammaire.
+          </p>
+        </article>
+
+        <article style="margin-bottom: 2rem">
+          <h2>Conseils pratiques des Samaritains</h2>
+          <p>
+            Chez <strong>LSM</strong>, notre mission est d’informer, éduquer et
+            aider le public. Voici quelques conseils pour agir en toute sécurité
+            au quotidien :
+          </p>
+          <ul class="no-bullets">
+            <li>
+              Gardez un <strong>kit de premiers secours</strong> accessible
+            </li>
+            <li>
+              Connaissez les <strong>numéros d’urgence</strong> : SAMU (15),
+              pompiers (18), police (17)
+            </li>
+            <li>
+              En cas d’accident : respirez, évaluez la situation, puis agissez
+            </li>
+          </ul>
+          <p>
+            La prévention sauve des vies : apprendre aujourd’hui, protéger
+            demain.
+          </p>
+        </article>
+      </section>
+      <section class="image-card">
+        <div class="image-container">
+          <!-- <img src="./Vista Logos/actualites.png" alt="Image" /> -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container" style="text-align: center">
+        <p>♥ LSM 2024 ♥</p>
+      </div>
+    </footer>
+  </body>
+</html>
