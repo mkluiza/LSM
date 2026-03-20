@@ -1,413 +1,500 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Les Samaritains - Association d'aide et de solidarité œuvrant depuis 2024 pour les personnes et familles en difficulté à Meaux." />
-    <meta name="theme-color" content="#dc2626" />
-    <title>Les Samaritains - Association d'Aide et de Solidarité</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="./public/css/styles.css" />
-  </head>
-  <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-      <div class="loading-spinner"></div>
-      <span class="loading-text">Chargement...</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Les Samaritains - Association d'aide et de solidarité œuvrant depuis 2024 pour les personnes et familles en difficulté à Meaux." />
+  <meta name="theme-color" content="#dc2626" />
+  <title>Les Samaritains - Association d'Aide et de Solidarité</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./public/css/styles.css" />
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-spinner"></div>
+    <span class="loading-text">Chargement...</span>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay"></div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="logo-text" style="color: var(--color-text);">Les Samaritains</span>
+      <button class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
+      <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
+      <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
+      <li><a href="#equipe" class="mobile-nav-link">Équipe</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="./index-en.html" class="lang-switch" style="margin-bottom: var(--space-3); width: 100%;">English</a>
+      <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">
+          <span class="logo-icon">
+            <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" />
+          </span>
+          <span class="logo-text">Les Samaritains</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#accueil" class="nav-link">Accueil</a></li>
+          <li><a href="#mission" class="nav-link">Mission</a></li>
+          <li><a href="./action.html" class="nav-link">Actions</a></li>
+          <li><a href="#equipe" class="nav-link">Équipe</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="./new.html" class="nav-link">Actualités</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="./index-en.html" class="lang-switch" title="English">EN</a>
+          <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="accueil">
+    <div class="hero-shapes">
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
     </div>
 
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay"></div>
-    
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-      <div class="mobile-nav-header">
-        <span class="logo-text" style="color: var(--color-text);">Les Samaritains</span>
-        <button class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Association solidaire depuis 2024
       </div>
-      <ul class="mobile-nav-links">
-        <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
-        <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
-        <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
-        <li><a href="#equipe" class="mobile-nav-link">Équipe</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-        <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
-      </ul>
-      <div class="mobile-nav-footer">
-        <a href="./index-en.html" class="lang-switch" style="margin-bottom: var(--space-3); width: 100%;">English</a>
-        <a href="#don" class="btn btn-primary">💝 Faire un don</a>
-      </div>
-    </nav>
 
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <a href="#" class="logo">
-            <span class="logo-icon">
-              <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" />
-            </span>
-            <span class="logo-text">Les Samaritains</span>
-          </a>
-          
-          <ul class="nav-links">
-            <li><a href="#accueil" class="nav-link">Accueil</a></li>
-            <li><a href="#mission" class="nav-link">Mission</a></li>
-            <li><a href="./action.html" class="nav-link">Actions</a></li>
-            <li><a href="#equipe" class="nav-link">Équipe</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="./new.html" class="nav-link">Actualités</a></li>
-          </ul>
-          
-          <div class="nav-right">
-            <a href="./index-en.html" class="lang-switch" title="English">EN</a>
-            <a href="#don" class="btn btn-primary">💝 Faire un don</a>
-          </div>
-          
-          <button class="mobile-menu-btn" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-      </div>
-    </header>
+      <h1 class="hero-title">
+        Ensemble pour la<br>
+        <span class="hero-title-accent">Solidarité</span>
+      </h1>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-      <div class="hero-shapes">
-        <div class="hero-shape"></div>
-        <div class="hero-shape"></div>
-        <div class="hero-shape"></div>
+      <p class="hero-description">
+        La jeune association Les Samaritains œuvre pour l'aide aux
+        plus démunis et la promotion de la solidarité dans notre communauté.
+      </p>
+
+      <div class="hero-actions">
+        <a href="./action.html" class="btn btn-primary btn-lg">Découvrir nos actions</a>
+        <a href="#contact" class="btn btn-secondary btn-lg">Devenir bénévole</a>
       </div>
-      
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          Association solidaire depuis 2024
-        </div>
-        
-        <h1 class="hero-title">
-          Ensemble pour la<br>
-          <span class="hero-title-accent">Solidarité</span>
-        </h1>
-        
-        <p class="hero-description">
-          La jeune association Les Samaritains œuvre pour l'aide aux
-          plus démunis et la promotion de la solidarité dans notre communauté.
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-mouse"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission section" id="mission">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre Mission</span>
+        <h2 class="section-title">Agir pour une société plus juste</h2>
+        <p class="section-description">
+          Nous créons un pont entre ceux qui peuvent aider et ceux qui en ont besoin.
         </p>
-        
-        <div class="hero-actions">
-          <a href="./action.html" class="btn btn-primary btn-lg">Découvrir nos actions</a>
-          <a href="#contact" class="btn btn-secondary btn-lg">Devenir bénévole</a>
-        </div>
       </div>
-      
-      <div class="scroll-indicator">
-        <div class="scroll-indicator-mouse"></div>
-        <span>Défiler</span>
-      </div>
-    </section>
 
-    <!-- Mission Section -->
-    <section class="mission section" id="mission">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Notre Mission</span>
-          <h2 class="section-title">Agir pour une société plus juste</h2>
-          <p class="section-description">
-            Nous créons un pont entre ceux qui peuvent aider et ceux qui en ont besoin.
-          </p>
-        </div>
-        
-        <div class="mission-grid">
-          <div class="mission-content reveal">
-            <h2>Solidarité & Entraide</h2>
-            <p>
-              Depuis près d'un an, Les Samaritains s'engagent quotidiennement
-              auprès des personnes et familles en difficulté. Notre mission est
-              de créer un pont entre ceux qui peuvent aider et ceux qui en ont
-              besoin.
-            </p>
-            <p>
-              Nous croyons fermement que chaque geste compte et que la
-              solidarité est la clé pour construire une société plus juste et
-              équitable pour tous.
-            </p>
-            
-            <div class="stats-grid">
-              <div class="stat-card">
-                <span class="stat-value">+100</span>
-                <span class="stat-label">Personnes aidées</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-value">10</span>
-                <span class="stat-label">Bénévoles actifs</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-value">1 an</span>
-                <span class="stat-label">d'expérience</span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-value">95%</span>
-                <span class="stat-label">Fonds redistribués</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="mission-image reveal reveal-delay-2">
-            <img src="./Vista Logos/sam_rouge.webp" alt="Mission solidarité - Équipe Les Samaritains" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Actions Section -->
-    <section class="actions section" id="actions">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Nos Actions</span>
-          <h2 class="section-title">Des initiatives concrètes</h2>
-          <p class="section-description">
-            Répondre aux besoins essentiels des personnes en difficulté.
-          </p>
-        </div>
-        
-        <div class="actions-grid">
-          <div class="action-card reveal">
-            <div class="action-icon">🍽️</div>
-            <h3>Aide Alimentaire</h3>
-            <p>
-              Distribution de colis alimentaires aux familles dans le besoin.
-              Nous organisons des collectes d'aliments pour les personnes en difficulté.
-            </p>
-          </div>
-          
-          <div class="action-card reveal reveal-delay-1">
-            <div class="action-icon">👗</div>
-            <h3>Vestimentaire</h3>
-            <p>
-              Collecte et redistribution de vêtements, chaussures et accessoires
-              pour tous les âges. Vestiaire solidaire ouvert à tous.
-            </p>
-          </div>
-          
-          <div class="action-card reveal reveal-delay-2">
-            <div class="action-icon">📚</div>
-            <h3>Aide Scolaire</h3>
-            <p>
-              Accompagnement aux démarches administratives et scolaires pour les
-              enfants issus de familles défavorisées.
-            </p>
-          </div>
-          
-          <div class="action-card reveal reveal-delay-3">
-            <div class="action-icon">🩺</div>
-            <h3>Santé & Bien-être</h3>
-            <p>
-              Accompagnement aux démarches médicales et sensibilisation à la
-              santé préventive.
-            </p>
-          </div>
-          
-          <div class="action-card reveal reveal-delay-4">
-            <div class="action-icon">🎭</div>
-            <h3>Activités Sociales</h3>
-            <p>
-              Organisation d'événements culturels, sorties et activités pour
-              lutter contre l'isolement et créer du lien social.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team section" id="equipe">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Notre Équipe</span>
-          <h2 class="section-title">Des bénévoles passionnés</h2>
-          <p class="section-description">
-            Une équipe dévouée et motivée à votre service.
-          </p>
-        </div>
-        
-        <div class="team-grid">
-          <div class="team-card reveal">
-            <div class="team-avatar">👨‍💼</div>
-            <div class="team-info">
-              <h3>Calin M.</h3>
-              <p class="team-role">Président</p>
-              <p>Fondateur de l'association, coordonne les actions et développe les partenariats.</p>
-            </div>
-          </div>
-          
-          <div class="team-card reveal reveal-delay-1">
-            <div class="team-avatar">👩‍💼</div>
-            <div class="team-info">
-              <h3>Madalina M.</h3>
-              <p class="team-role">Vice-Présidente</p>
-              <p>Responsable de l'aide alimentaire et de la coordination des bénévoles.</p>
-            </div>
-          </div>
-          
-          <div class="team-card reveal reveal-delay-2">
-            <div class="team-avatar">👨‍🏫</div>
-            <div class="team-info">
-              <h3>Enzo C.</h3>
-              <p class="team-role">Trésorier</p>
-              <p>Gestion financière et administrative de l'association.</p>
-            </div>
-          </div>
-          
-          <div class="team-card reveal reveal-delay-3">
-            <div class="team-avatar">👩‍🎓</div>
-            <div class="team-info">
-              <h3>Luiza M.</h3>
-              <p class="team-role">Secrétaire & WebDev</p>
-              <p>Responsable communication, administration et événements.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section" id="contact">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Contact</span>
-          <h2 class="section-title">Nous Contacter</h2>
-          <p class="section-description">
-            Une question ? Envie de rejoindre l'équipe ? Écrivez-nous !
-          </p>
-        </div>
-        
-        <div class="contact-grid">
-          <div class="contact-form-card reveal">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name" class="form-label">Nom complet</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom et prénom" required />
-              </div>
-              
-              <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required />
-              </div>
-              
-              <div class="form-group">
-                <label for="phone" class="form-label">Téléphone</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 12 34 56 78" />
-              </div>
-              
-              <div class="form-group">
-                <label for="subject" class="form-label">Sujet</label>
-                <select id="subject" name="subject" class="form-select" required>
-                  <option value="">Choisir un sujet</option>
-                  <option value="benevole">Devenir bénévole</option>
-                  <option value="don">Faire un don / Reçu fiscal</option>
-                  <option value="aide">Demander de l'aide</option>
-                  <option value="partenariat">Partenariat</option>
-                  <option value="autre">Autre</option>
-                </select>
-              </div>
-              
-              <div class="form-group">
-                <label for="message" class="form-label">Message</label>
-                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Votre message..." required></textarea>
-              </div>
-              
-              <button type="submit" class="form-submit">Envoyer le message</button>
-            </form>
-          </div>
-          
-          <div class="contact-info reveal reveal-delay-2">
-            <h3>Informations</h3>
-            <p>
-              N'hésitez pas à nous contacter pour toute information ou pour
-              rejoindre notre équipe de bénévoles.
-            </p>
-            
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-item-icon">✉️</div>
-                <span class="contact-item-text">assoslsm@gmail.com</span>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-item-icon">📍</div>
-                <span class="contact-item-text">77100 Meaux, France</span>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-item-icon">🕒</div>
-                <span class="contact-item-text">Lun-Ven: 9h-17h | Sam: 9h-12h</span>
-              </div>
-            </div>
-            
-            <div class="volunteer-cta">
-              <h4>Devenir Bénévole</h4>
-              <p>
-                Rejoignez notre équipe ! Nous recherchons des bénévoles motivés
-                pour nos différentes missions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Donation Section -->
-    <section class="donation section" id="don">
-      <div class="container">
-        <div class="donation-card reveal">
-          <div class="donation-icon">🎁</div>
-          <h3>Faire un Don</h3>
+      <div class="mission-grid">
+        <div class="mission-content reveal">
+          <h2>Solidarité & Entraide</h2>
           <p>
-            Votre soutien nous permet de continuer à aider ceux qui en ont besoin.
+            Depuis près d'un an, Les Samaritains s'engagent quotidiennement
+            auprès des personnes et familles en difficulté. Notre mission est
+            de créer un pont entre ceux qui peuvent aider et ceux qui en ont
+            besoin.
           </p>
-          
-          <div class="donation-info">
-            <p>
-              Vous souhaitez soutenir notre association ?<br>
-              Contactez-nous via le formulaire ci-dessus, et nous vous
-              transmettrons les informations bancaires pour effectuer un don en
-              toute sécurité. Merci pour votre soutien ! 💙
-            </p>
+          <p>
+            Nous croyons fermement que chaque geste compte et que la
+            solidarité est la clé pour construire une société plus juste et
+            équitable pour tous.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-value">+100</span>
+              <span class="stat-label">Personnes aidées</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">10</span>
+              <span class="stat-label">Bénévoles actifs</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">1 an</span>
+              <span class="stat-label">d'expérience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">95%</span>
+              <span class="stat-label">Fonds redistribués</span>
+            </div>
           </div>
-          
-          <p class="donation-note">
-            Si vous souhaitez un reçu fiscal, n'oubliez pas de nous le faire
-            savoir avec votre nom et adresse complète.
+        </div>
+
+        <div class="mission-image reveal reveal-delay-2">
+          <img src="./Vista Logos/sam_rouge.webp" alt="Mission solidarité - Équipe Les Samaritains" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions Section -->
+  <section class="actions section" id="actions">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nos Actions</span>
+        <h2 class="section-title">Des initiatives concrètes</h2>
+        <p class="section-description">
+          Répondre aux besoins essentiels des personnes en difficulté.
+        </p>
+      </div>
+
+      <div class="actions-grid">
+        <div class="action-card reveal">
+          <div class="action-icon">🍽️</div>
+          <h3>Aide Alimentaire</h3>
+          <p>
+            Distribution de colis alimentaires aux familles dans le besoin.
+            Nous organisons des collectes d'aliments pour les personnes en difficulté.
+          </p>
+        </div>
+
+        <div class="action-card reveal reveal-delay-1">
+          <div class="action-icon">👗</div>
+          <h3>Vestimentaire</h3>
+          <p>
+            Collecte et redistribution de vêtements, chaussures et accessoires
+            pour tous les âges. Vestiaire solidaire ouvert à tous.
+          </p>
+        </div>
+
+        <div class="action-card reveal reveal-delay-2">
+          <div class="action-icon">📚</div>
+          <h3>Aide Scolaire</h3>
+          <p>
+            Accompagnement aux démarches administratives et scolaires pour les
+            enfants issus de familles défavorisées.
+          </p>
+        </div>
+
+        <div class="action-card reveal reveal-delay-3">
+          <div class="action-icon">🩺</div>
+          <h3>Santé & Bien-être</h3>
+          <p>
+            Accompagnement aux démarches médicales et sensibilisation à la
+            santé préventive.
+          </p>
+        </div>
+
+        <div class="action-card reveal reveal-delay-4">
+          <div class="action-icon">🎭</div>
+          <h3>Activités Sociales</h3>
+          <p>
+            Organisation d'événements culturels, sorties et activités pour
+            lutter contre l'isolement et créer du lien social.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
+  <!-- Team Section -->
+  <section class="team section" id="equipe">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Notre Équipe</span>
+        <h2 class="section-title">Des bénévoles passionnés</h2>
+        <p class="section-description">
+          Une équipe dévouée et motivée à votre service.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">👨‍💼</div>
+          <div class="team-info">
+            <h3>Calin M.</h3>
+            <p class="team-role">Président</p>
+            <p>Fondateur de l'association, coordonne les actions et développe les partenariats.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar">👩‍💼</div>
+          <div class="team-info">
+            <h3>Madalina M.</h3>
+            <p class="team-role">Vice-Présidente</p>
+            <p>Responsable de l'aide alimentaire et de la coordination des bénévoles.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar">👨‍🏫</div>
+          <div class="team-info">
+            <h3>Enzo C.</h3>
+            <p class="team-role">Trésorier</p>
+            <p>Gestion financière et administrative de l'association.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-avatar">👩‍🎓</div>
+          <div class="team-info">
+            <h3>Luiza M.</h3>
+            <p class="team-role">Secrétaire & WebDev</p>
+            <p>Responsable communication, administration et événements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Nous Contacter</h2>
+        <p class="section-description">
+          Une question ? Envie de rejoindre l'équipe ? Écrivez-nous !
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-card reveal">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Nom complet</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom et prénom" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Téléphone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 12 34 56 78" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Sujet</label>
+              <select id="subject" name="subject" class="form-select" required>
+                <option value="">Choisir un sujet</option>
+                <option value="benevole">Devenir bénévole</option>
+                <option value="don">Faire un don / Reçu fiscal</option>
+                <option value="aide">Demander de l'aide</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Votre message..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Envoyer le message</button>
+          </form>
+        </div>
+
+        <div class="contact-info reveal reveal-delay-2">
+          <h3>Informations</h3>
+          <p>
+            N'hésitez pas à nous contacter pour toute information ou pour
+            rejoindre notre équipe de bénévoles.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <span class="contact-item-text">assoslsm@gmail.com</span>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <span class="contact-item-text">77100 Meaux, France</span>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">🕒</div>
+              <span class="contact-item-text">Lun-Ven: 9h-17h | Sam: 9h-12h</span>
+            </div>
+          </div>
+
+          <div class="volunteer-cta">
+            <h4>Devenir Bénévole</h4>
+            <p>
+              Rejoignez notre équipe ! Nous recherchons des bénévoles motivés
+              pour nos différentes missions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section class="donation section" id="don">
+    <div class="container">
+      <div class="donation-card reveal">
+        <div class="donation-icon">🎁</div>
+        <h3>Faire un Don</h3>
+        <p>
+          Votre soutien nous permet de continuer à aider ceux qui en ont besoin.
+        </p>
+
+        <div class="donation-info">
+          <p>
+            Vous souhaitez soutenir notre association ?<br>
+            Contactez-nous via le formulaire ci-dessus, et nous vous
+            transmettrons les informations bancaires pour effectuer un don en
+            toute sécurité. Merci pour votre soutien ! 💙
+          </p>
+        </div>
+
+        <p class="donation-note">
+          Si vous souhaitez un reçu fiscal, n'oubliez pas de nous le faire
+          savoir avec votre nom et adresse complète.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- About Column -->
+        <div class="footer-col footer-about">
           <div class="footer-logo">
+            <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" class="footer-logo-img" />
             <span>Les Samaritains</span>
           </div>
-          <p class="footer-text">
-            <span class="footer-heart">♥</span> LSM 2024 <span class="footer-heart">♥</span>
+          <p class="footer-description">
+            Association d'aide et de solidarité œuvrant depuis 2024 pour les personnes et familles en difficulté à
+            Meaux.
           </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61570223021498" target="_blank" rel="noopener noreferrer"
+              class="footer-social-link" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/asso_lessamaritains/" target="_blank" rel="noopener noreferrer"
+              class="footer-social-link" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="mailto:assoslsm@gmail.com" class="footer-social-link" aria-label="Email">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Liens Rapides</h4>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#mission">Notre Mission</a></li>
+            <li><a href="./action.html">Nos Actions</a></li>
+            <li><a href="./new.html">Actualités</a></li>
+            <li><a href="#equipe">L'Équipe</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links footer-contact-list">
+            <li>
+              <span class="footer-contact-icon">✉️</span>
+              <a href="mailto:assoslsm@gmail.com">assoslsm@gmail.com</a>
+            </li>
+            <li>
+              <span class="footer-contact-icon">📍</span>
+              <span>77100 Meaux, France</span>
+            </li>
+            <li>
+              <span class="footer-contact-icon">🕒</span>
+              <span>Lun-Ven: 9h-17h<br>Sam: 9h-12h</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Nous Soutenir</h4>
+          <p class="footer-description">
+            Chaque geste compte. Rejoignez notre cause ou faites un don pour aider ceux qui en ont besoin.
+          </p>
+          <div class="footer-cta-buttons">
+            <a href="#don" class="btn btn-primary btn-sm">💝 Faire un don</a>
+            <a href="#contact" class="btn btn-secondary btn-sm">Devenir bénévole</a>
+          </div>
         </div>
       </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="./public/js/main.js"></script>
-  </body>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-text">
+          © 2024 Les Samaritains — Association loi 1901. Tous droits réservés.
+        </p>
+        <p class="footer-text">
+          Fait avec <span class="footer-heart">♥</span> à Meaux
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="./public/js/main.js"></script>
+</body>
+
 </html>

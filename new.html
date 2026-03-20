@@ -1,565 +1,583 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Restez informés des dernières actualités et nouvelles de l'association Les Samaritains." />
-    <meta name="theme-color" content="#dc2626" />
-    <title>Actualités - Les Samaritains</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="./public/css/styles.css" />
-  </head>
-  <body>
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay"></div>
-    
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-      <div class="mobile-nav-header">
-        <span class="logo-text" style="color: var(--color-text);">Les Samaritains</span>
-        <button class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="./index.html#accueil" class="mobile-nav-link">Accueil</a></li>
-        <li><a href="./index.html#mission" class="mobile-nav-link">Mission</a></li>
-        <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
-        <li><a href="./index.html#equipe" class="mobile-nav-link">Équipe</a></li>
-        <li><a href="./index.html#contact" class="mobile-nav-link">Contact</a></li>
-        <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
-      </ul>
-      <div class="mobile-nav-footer">
-        <a href="./new-en.html" class="lang-switch" style="margin-bottom: var(--space-3); width: 100%;">English</a>
-        <a href="./index.html#don" class="btn btn-primary">💝 Faire un don</a>
-      </div>
-    </nav>
 
-    <!-- Header -->
-    <header class="header scrolled">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Restez informés des dernières actualités et nouvelles de l'association Les Samaritains." />
+  <meta name="theme-color" content="#dc2626" />
+  <title>Actualités - Les Samaritains</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./public/css/styles.css" />
+</head>
+
+<body>
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay"></div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-header">
+      <span class="logo-text" style="color: var(--color-text);">Les Samaritains</span>
+      <button class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="./index.html#accueil" class="mobile-nav-link">Accueil</a></li>
+      <li><a href="./index.html#mission" class="mobile-nav-link">Mission</a></li>
+      <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
+      <li><a href="./index.html#equipe" class="mobile-nav-link">Équipe</a></li>
+      <li><a href="./index.html#contact" class="mobile-nav-link">Contact</a></li>
+      <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="./new-en.html" class="lang-switch" style="margin-bottom: var(--space-3); width: 100%;">English</a>
+      <a href="./index.html#don" class="btn btn-primary">💝 Faire un don</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header scrolled">
+    <div class="container">
+      <nav class="nav">
+        <a href="./index.html" class="logo">
+          <span class="logo-icon">
+            <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" />
+          </span>
+          <span class="logo-text">Les Samaritains</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="./index.html#accueil" class="nav-link">Accueil</a></li>
+          <li><a href="./index.html#mission" class="nav-link">Mission</a></li>
+          <li><a href="./action.html" class="nav-link">Actions</a></li>
+          <li><a href="./index.html#equipe" class="nav-link">Équipe</a></li>
+          <li><a href="./index.html#contact" class="nav-link">Contact</a></li>
+          <li><a href="./new.html" class="nav-link">Actualités</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <a href="./new-en.html" class="lang-switch" title="English">EN</a>
+          <a href="./index.html#don" class="btn btn-primary">💝 Faire un don</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Actualités</h1>
+      <p>Les dernières nouvelles de notre association</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- News Section -->
+    <section class="news-section">
       <div class="container">
-        <nav class="nav">
-          <a href="./index.html" class="logo">
-            <span class="logo-icon">
-              <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" />
-            </span>
-            <span class="logo-text">Les Samaritains</span>
-          </a>
-          
-          <ul class="nav-links">
-            <li><a href="./index.html#accueil" class="nav-link">Accueil</a></li>
-            <li><a href="./index.html#mission" class="nav-link">Mission</a></li>
-            <li><a href="./action.html" class="nav-link">Actions</a></li>
-            <li><a href="./index.html#equipe" class="nav-link">Équipe</a></li>
-            <li><a href="./index.html#contact" class="nav-link">Contact</a></li>
-            <li><a href="./new.html" class="nav-link">Actualités</a></li>
-          </ul>
-          
-          <div class="nav-right">
-            <a href="./new-en.html" class="lang-switch" title="English">EN</a>
-            <a href="./index.html#don" class="btn btn-primary">💝 Faire un don</a>
+        <!-- Featured Article -->
+        <article class="article-featured reveal">
+          <div class="article-featured-image">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80"
+              alt="Lancement officiel de Les Samaritains" />
           </div>
-          
-          <button class="mobile-menu-btn" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </nav>
-      </div>
-    </header>
+          <div class="article-featured-content">
+            <h2>Lancement officiel de « Les Samaritains »</h2>
+            <p>
+              Nous avons le plaisir d'annoncer le lancement de notre association,
+              dédiée à la solidarité et à l'entraide. Après des mois de préparation,
+              notre équipe de bénévoles passionnés est enfin prête à se mettre au
+              service des personnes et familles dans le besoin.
+            </p>
+            <p>
+              Notre mission est claire : apporter une aide concrète et un soutien
+              moral à ceux qui traversent des moments difficiles. Que ce soit par
+              des dons matériels, une écoute attentive ou un accompagnement personnalisé,
+              nous sommes là pour faire la différence.
+            </p>
+          </div>
+        </article>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>Actualités</h1>
-        <p>Les dernières nouvelles de notre association</p>
+        <!-- CSEN Article -->
+        <article class="article-featured reveal">
+          <div class="article-featured-image">
+            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80"
+              alt="Proposition du CSEN sur l'accord du participe passé" />
+          </div>
+          <div class="article-featured-content">
+            <h2>Proposition du CSEN : simplification de l'accord du participe passé</h2>
+            <p>
+              L'accord du participe passé pour certains, c'est comme coder sans debugger :
+              ça plante à tous les coups. Le Conseil scientifique de l'éducation nationale
+              (CSEN) propose de simplifier l'accord du participe passé pour le rendre plus
+              accessible aux élèves et au grand public :
+            </p>
+            <ul style="margin: var(--space-4) 0; padding-left: var(--space-6); color: var(--color-text-muted);">
+              <li style="margin-bottom: var(--space-2);"><strong>Avec avoir :</strong> le participe passé devient
+                invariable</li>
+              <li><strong>Avec être :</strong> accord systématique avec le sujet</li>
+            </ul>
+            <p>
+              Cette réforme vise à réduire la complexité, gagner du temps d'apprentissage
+              et favoriser la maîtrise de la langue française. Elle suscite cependant un
+              débat parmi les linguistes et enseignants, certains souhaitant préserver la
+              subtilité historique de la grammaire.
+            </p>
+          </div>
+        </article>
+
+        <!-- Conseils pratiques -->
+        <article class="article-featured reveal">
+          <div class="article-featured-image">
+            <img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&q=80"
+              alt="Conseils pratiques des Samaritains" />
+          </div>
+          <div class="article-featured-content">
+            <h2>Conseils pratiques des Samaritains</h2>
+            <p>
+              Chez LSM, notre mission est d'informer, éduquer et aider le public.
+              Voici quelques conseils pour agir en toute sécurité au quotidien :
+            </p>
+            <ul style="margin: var(--space-4) 0; padding-left: var(--space-6); color: var(--color-text-muted);">
+              <li style="margin-bottom: var(--space-2);">Gardez un kit de premiers secours accessible</li>
+              <li style="margin-bottom: var(--space-2);">Connaissez les numéros d'urgence : SAMU (15), pompiers (18),
+                police (17)</li>
+              <li>En cas d'accident : respirez, évaluez la situation, puis agissez</li>
+            </ul>
+            <p style="font-weight: 600; color: var(--color-primary); margin-top: var(--space-4);">
+              La prévention sauve des vies : apprendre aujourd'hui, protéger demain.
+            </p>
+          </div>
+        </article>
+
+        <!-- Article Grid -->
+        <div class="article-grid">
+          <article class="article-card reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80"
+                alt="Première intervention de l'équipe" />
+            </div>
+            <div class="article-card-content">
+              <h3>Notre première intervention !</h3>
+              <p>
+                Quelques jours après notre lancement, l'équipe a réalisé
+                sa première intervention auprès d'une famille de 11 personnes
+                en grande difficulté.
+              </p>
+              <a href="./action.html" class="article-link">
+                Lire la suite →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80"
+                alt="Appel aux bénévoles" />
+            </div>
+            <div class="article-card-content">
+              <h3>Rejoignez notre équipe !</h3>
+              <p>
+                Nous recherchons des bénévoles motivés pour nous aider dans
+                nos missions. Chaque compétence est précieuse !
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                Nous contacter →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80"
+                alt="Campagne de dons" />
+            </div>
+            <div class="article-card-content">
+              <h3>Campagne de collecte</h3>
+              <p>
+                Notre campagne de collecte de dons est officiellement lancée.
+                Chaque contribution, quelle qu'elle soit, fait une réelle différence.
+              </p>
+              <a href="./index.html#don" class="article-link">
+                Participer →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80"
+                alt="Distribution de repas" />
+            </div>
+            <div class="article-card-content">
+              <h3>Distribution de repas chauds</h3>
+              <p>
+                Plus de 50 repas distribués ce week-end aux personnes sans-abri
+                dans le centre-ville. Merci à tous nos bénévoles !
+              </p>
+              <a href="./action.html" class="article-link">
+                Lire la suite →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80"
+                alt="Partenariat entreprise" />
+            </div>
+            <div class="article-card-content">
+              <h3>Nouveau partenariat solidaire</h3>
+              <p>
+                Une entreprise locale s'engage à nos côtés pour soutenir
+                nos actions. Ensemble, nous irons plus loin !
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                En savoir plus →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=600&q=80"
+                alt="Témoignage famille" />
+            </div>
+            <div class="article-card-content">
+              <h3>Témoignage : « Ils nous ont redonné espoir »</h3>
+              <p>
+                Une famille accompagnée partage son expérience et nous
+                rappelle pourquoi notre mission est essentielle.
+              </p>
+              <a href="./action.html" class="article-link">
+                Lire le témoignage →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80"
+                alt="Formation bénévoles" />
+            </div>
+            <div class="article-card-content">
+              <h3>Formation des nouveaux bénévoles</h3>
+              <p>
+                Session de formation réussie pour nos 12 nouveaux bénévoles.
+                Bienvenue dans l'équipe !
+              </p>
+              <a href="./index.html#equipe" class="article-link">
+                Découvrir l'équipe →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                alt="Collecte vêtements" />
+            </div>
+            <div class="article-card-content">
+              <h3>Grande collecte de vêtements</h3>
+              <p>
+                Plus de 200 kg de vêtements collectés lors de notre opération
+                spéciale. Un grand merci aux donateurs !
+              </p>
+              <a href="./index.html#don" class="article-link">
+                Comment participer →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80"
+                alt="Journée solidarité" />
+            </div>
+            <div class="article-card-content">
+              <h3>Journée mondiale de la solidarité</h3>
+              <p>
+                À l'occasion de cette journée spéciale, découvrez comment
+                vous pouvez agir à votre échelle au quotidien.
+              </p>
+              <a href="./action.html" class="article-link">
+                Nos conseils →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
+                alt="Bilan trimestre" />
+            </div>
+            <div class="article-card-content">
+              <h3>Bilan du 1er trimestre 2025</h3>
+              <p>
+                En 3 mois : 15 familles aidées, 200 repas distribués,
+                30 bénévoles actifs. Merci à tous !
+              </p>
+              <a href="./action.html" class="article-link">
+                Voir le bilan →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80"
+                alt="Événement caritatif" />
+            </div>
+            <div class="article-card-content">
+              <h3>Soirée caritative réussie</h3>
+              <p>
+                Notre première soirée de gala a permis de récolter des fonds
+                pour nos prochaines actions humanitaires.
+              </p>
+              <a href="./index.html#don" class="article-link">
+                Contribuer →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80"
+                alt="Aide rentrée scolaire" />
+            </div>
+            <div class="article-card-content">
+              <h3>Opération rentrée scolaire</h3>
+              <p>
+                Distribution de fournitures scolaires à 50 enfants issus
+                de familles en difficulté. L'éducation pour tous !
+              </p>
+              <a href="./action.html" class="article-link">
+                En savoir plus →
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- À Venir Section -->
+        <div class="section-header reveal" style="margin-top: var(--space-16);">
+          <span class="section-badge">🗓️ Prochainement</span>
+          <h2>À venir</h2>
+          <p>Les événements et actions à ne pas manquer</p>
+        </div>
+
+        <div class="article-grid">
+          <article class="article-card article-card-upcoming reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80"
+                alt="Marche solidaire" />
+            </div>
+            <div class="article-card-content">
+              <h3>Marche solidaire 2025</h3>
+              <p>
+                Rejoignez-nous pour une marche solidaire de 5 km !
+                Les fonds récoltés iront aux familles dans le besoin.
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                S'inscrire →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card article-card-upcoming reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&q=80"
+                alt="Collecte printemps" />
+            </div>
+            <div class="article-card-content">
+              <h3>Grande collecte de printemps</h3>
+              <p>
+                Apportez vos dons de vêtements, jouets et produits d'hygiène
+                lors de notre collecte annuelle.
+              </p>
+              <a href="./index.html#don" class="article-link">
+                Participer →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card article-card-upcoming reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80" alt="Atelier cuisine" />
+            </div>
+            <div class="article-card-content">
+              <h3>Atelier cuisine solidaire</h3>
+              <p>
+                Venez cuisiner avec nous ! Les repas préparés seront
+                distribués aux personnes isolées.
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                En savoir plus →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card article-card-upcoming reveal">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80"
+                alt="Formation écoute" />
+            </div>
+            <div class="article-card-content">
+              <h3>Formation à l'écoute active</h3>
+              <p>
+                Session de formation gratuite pour apprendre les bases
+                de l'écoute bienveillante. Ouverte à tous !
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                S'inscrire →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card article-card-upcoming reveal reveal-delay-1">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+                alt="Journée portes ouvertes" />
+            </div>
+            <div class="article-card-content">
+              <h3>Journée portes ouvertes</h3>
+              <p>
+                Venez découvrir notre association, rencontrer nos bénévoles
+                et en apprendre plus sur nos actions.
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                Plus d'infos →
+              </a>
+            </div>
+          </article>
+
+          <article class="article-card article-card-upcoming reveal reveal-delay-2">
+            <div class="article-card-image">
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80" alt="Gala annuel" />
+            </div>
+            <div class="article-card-content">
+              <h3>Gala annuel de bienfaisance</h3>
+              <p>
+                Notre événement phare de l'année ! Dîner, spectacle et
+                vente aux enchères pour soutenir nos missions.
+              </p>
+              <a href="./index.html#contact" class="article-link">
+                Réserver →
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="news-cta reveal">
+          <h2>Restez informés !</h2>
+          <p>
+            Suivez-nous sur nos réseaux sociaux pour ne rien manquer de nos
+            actualités et de nos interventions.
+          </p>
+          <div class="news-cta-buttons">
+            <a href="https://www.linkedin.com/company/les-samaritains-lsm/" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary">
+              Suivre sur LinkedIn
+            </a>
+            <a href="./index.html#contact" class="btn btn-outline">
+              Nous contacter
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+  </main>
 
-    <!-- Main Content -->
-    <main>
-      <!-- News Section -->
-      <section class="news-section">
-        <div class="container">
-          <!-- Featured Article -->
-          <article class="article-featured reveal">
-            <div class="article-featured-image">
-              <img 
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80" 
-                alt="Lancement officiel de Les Samaritains"
-              />
-            </div>
-            <div class="article-featured-content">
-              <h2>Lancement officiel de « Les Samaritains »</h2>
-              <p>
-                Nous avons le plaisir d'annoncer le lancement de notre association, 
-                dédiée à la solidarité et à l'entraide. Après des mois de préparation, 
-                notre équipe de bénévoles passionnés est enfin prête à se mettre au 
-                service des personnes et familles dans le besoin.
-              </p>
-              <p>
-                Notre mission est claire : apporter une aide concrète et un soutien 
-                moral à ceux qui traversent des moments difficiles. Que ce soit par 
-                des dons matériels, une écoute attentive ou un accompagnement personnalisé, 
-                nous sommes là pour faire la différence.
-              </p>
-            </div>
-          </article>
-
-          <!-- CSEN Article -->
-          <article class="article-featured reveal">
-            <div class="article-featured-image">
-              <img 
-                src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80" 
-                alt="Proposition du CSEN sur l'accord du participe passé"
-              />
-            </div>
-            <div class="article-featured-content">
-              <h2>Proposition du CSEN : simplification de l'accord du participe passé</h2>
-              <p>
-                L'accord du participe passé pour certains, c'est comme coder sans debugger : 
-                ça plante à tous les coups. Le Conseil scientifique de l'éducation nationale 
-                (CSEN) propose de simplifier l'accord du participe passé pour le rendre plus 
-                accessible aux élèves et au grand public :
-              </p>
-              <ul style="margin: var(--space-4) 0; padding-left: var(--space-6); color: var(--color-text-muted);">
-                <li style="margin-bottom: var(--space-2);"><strong>Avec avoir :</strong> le participe passé devient invariable</li>
-                <li><strong>Avec être :</strong> accord systématique avec le sujet</li>
-              </ul>
-              <p>
-                Cette réforme vise à réduire la complexité, gagner du temps d'apprentissage 
-                et favoriser la maîtrise de la langue française. Elle suscite cependant un 
-                débat parmi les linguistes et enseignants, certains souhaitant préserver la 
-                subtilité historique de la grammaire.
-              </p>
-            </div>
-          </article>
-
-          <!-- Conseils pratiques -->
-          <article class="article-featured reveal">
-            <div class="article-featured-image">
-              <img 
-                src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=800&q=80" 
-                alt="Conseils pratiques des Samaritains"
-              />
-            </div>
-            <div class="article-featured-content">
-              <h2>Conseils pratiques des Samaritains</h2>
-              <p>
-                Chez LSM, notre mission est d'informer, éduquer et aider le public. 
-                Voici quelques conseils pour agir en toute sécurité au quotidien :
-              </p>
-              <ul style="margin: var(--space-4) 0; padding-left: var(--space-6); color: var(--color-text-muted);">
-                <li style="margin-bottom: var(--space-2);">Gardez un kit de premiers secours accessible</li>
-                <li style="margin-bottom: var(--space-2);">Connaissez les numéros d'urgence : SAMU (15), pompiers (18), police (17)</li>
-                <li>En cas d'accident : respirez, évaluez la situation, puis agissez</li>
-              </ul>
-              <p style="font-weight: 600; color: var(--color-primary); margin-top: var(--space-4);">
-                La prévention sauve des vies : apprendre aujourd'hui, protéger demain.
-              </p>
-            </div>
-          </article>
-
-          <!-- Article Grid -->
-          <div class="article-grid">
-            <article class="article-card reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" 
-                  alt="Première intervention de l'équipe"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Notre première intervention !</h3>
-                <p>
-                  Quelques jours après notre lancement, l'équipe a réalisé 
-                  sa première intervention auprès d'une famille de 11 personnes 
-                  en grande difficulté.
-                </p>
-                <a href="./action.html" class="article-link">
-                  Lire la suite →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80" 
-                  alt="Appel aux bénévoles"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Rejoignez notre équipe !</h3>
-                <p>
-                  Nous recherchons des bénévoles motivés pour nous aider dans 
-                  nos missions. Chaque compétence est précieuse !
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  Nous contacter →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" 
-                  alt="Campagne de dons"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Campagne de collecte</h3>
-                <p>
-                  Notre campagne de collecte de dons est officiellement lancée. 
-                  Chaque contribution, quelle qu'elle soit, fait une réelle différence.
-                </p>
-                <a href="./index.html#don" class="article-link">
-                  Participer →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80" 
-                  alt="Distribution de repas"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Distribution de repas chauds</h3>
-                <p>
-                  Plus de 50 repas distribués ce week-end aux personnes sans-abri 
-                  dans le centre-ville. Merci à tous nos bénévoles !
-                </p>
-                <a href="./action.html" class="article-link">
-                  Lire la suite →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" 
-                  alt="Partenariat entreprise"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Nouveau partenariat solidaire</h3>
-                <p>
-                  Une entreprise locale s'engage à nos côtés pour soutenir 
-                  nos actions. Ensemble, nous irons plus loin !
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  En savoir plus →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1516733968668-dbdce39c4651?w=600&q=80" 
-                  alt="Témoignage famille"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Témoignage : « Ils nous ont redonné espoir »</h3>
-                <p>
-                  Une famille accompagnée partage son expérience et nous 
-                  rappelle pourquoi notre mission est essentielle.
-                </p>
-                <a href="./action.html" class="article-link">
-                  Lire le témoignage →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" 
-                  alt="Formation bénévoles"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Formation des nouveaux bénévoles</h3>
-                <p>
-                  Session de formation réussie pour nos 12 nouveaux bénévoles. 
-                  Bienvenue dans l'équipe !
-                </p>
-                <a href="./index.html#equipe" class="article-link">
-                  Découvrir l'équipe →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" 
-                  alt="Collecte vêtements"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Grande collecte de vêtements</h3>
-                <p>
-                  Plus de 200 kg de vêtements collectés lors de notre opération 
-                  spéciale. Un grand merci aux donateurs !
-                </p>
-                <a href="./index.html#don" class="article-link">
-                  Comment participer →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80" 
-                  alt="Journée solidarité"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Journée mondiale de la solidarité</h3>
-                <p>
-                  À l'occasion de cette journée spéciale, découvrez comment 
-                  vous pouvez agir à votre échelle au quotidien.
-                </p>
-                <a href="./action.html" class="article-link">
-                  Nos conseils →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" 
-                  alt="Bilan trimestre"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Bilan du 1er trimestre 2025</h3>
-                <p>
-                  En 3 mois : 15 familles aidées, 200 repas distribués, 
-                  30 bénévoles actifs. Merci à tous !
-                </p>
-                <a href="./action.html" class="article-link">
-                  Voir le bilan →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" 
-                  alt="Événement caritatif"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Soirée caritative réussie</h3>
-                <p>
-                  Notre première soirée de gala a permis de récolter des fonds 
-                  pour nos prochaines actions humanitaires.
-                </p>
-                <a href="./index.html#don" class="article-link">
-                  Contribuer →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" 
-                  alt="Aide rentrée scolaire"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Opération rentrée scolaire</h3>
-                <p>
-                  Distribution de fournitures scolaires à 50 enfants issus 
-                  de familles en difficulté. L'éducation pour tous !
-                </p>
-                <a href="./action.html" class="article-link">
-                  En savoir plus →
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <!-- À Venir Section -->
-          <div class="section-header reveal" style="margin-top: var(--space-16);">
-            <span class="section-badge">🗓️ Prochainement</span>
-            <h2>À venir</h2>
-            <p>Les événements et actions à ne pas manquer</p>
-          </div>
-
-          <div class="article-grid">
-            <article class="article-card article-card-upcoming reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&q=80" 
-                  alt="Marche solidaire"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Marche solidaire 2025</h3>
-                <p>
-                  Rejoignez-nous pour une marche solidaire de 5 km ! 
-                  Les fonds récoltés iront aux familles dans le besoin.
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  S'inscrire →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card article-card-upcoming reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&q=80" 
-                  alt="Collecte printemps"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Grande collecte de printemps</h3>
-                <p>
-                  Apportez vos dons de vêtements, jouets et produits d'hygiène 
-                  lors de notre collecte annuelle.
-                </p>
-                <a href="./index.html#don" class="article-link">
-                  Participer →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card article-card-upcoming reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80" 
-                  alt="Atelier cuisine"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Atelier cuisine solidaire</h3>
-                <p>
-                  Venez cuisiner avec nous ! Les repas préparés seront 
-                  distribués aux personnes isolées.
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  En savoir plus →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card article-card-upcoming reveal">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" 
-                  alt="Formation écoute"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Formation à l'écoute active</h3>
-                <p>
-                  Session de formation gratuite pour apprendre les bases 
-                  de l'écoute bienveillante. Ouverte à tous !
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  S'inscrire →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card article-card-upcoming reveal reveal-delay-1">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" 
-                  alt="Journée portes ouvertes"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Journée portes ouvertes</h3>
-                <p>
-                  Venez découvrir notre association, rencontrer nos bénévoles 
-                  et en apprendre plus sur nos actions.
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  Plus d'infos →
-                </a>
-              </div>
-            </article>
-
-            <article class="article-card article-card-upcoming reveal reveal-delay-2">
-              <div class="article-card-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80" 
-                  alt="Gala annuel"
-                />
-              </div>
-              <div class="article-card-content">
-                <h3>Gala annuel de bienfaisance</h3>
-                <p>
-                  Notre événement phare de l'année ! Dîner, spectacle et 
-                  vente aux enchères pour soutenir nos missions.
-                </p>
-                <a href="./index.html#contact" class="article-link">
-                  Réserver →
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Call to Action -->
-          <div class="news-cta reveal">
-            <h2>Restez informés !</h2>
-            <p>
-              Suivez-nous sur nos réseaux sociaux pour ne rien manquer de nos 
-              actualités et de nos interventions.
-            </p>
-            <div class="news-cta-buttons">
-              <a 
-                href="https://www.linkedin.com/company/les-samaritains-lsm/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn btn-primary"
-              >
-                Suivre sur LinkedIn
-              </a>
-              <a href="./index.html#contact" class="btn btn-outline">
-                Nous contacter
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
           <div class="footer-logo">
+            <img src="./Vista Logos/logo-png.png" alt="Logo Les Samaritains" class="footer-logo-img" />
             <span>Les Samaritains</span>
           </div>
-          <p class="footer-text">
-            <span class="footer-heart">♥</span> LSM 2024 <span class="footer-heart">♥</span>
+          <p class="footer-description">
+            Association d'aide et de solidarité œuvrant depuis 2024 pour les personnes et familles en difficulté à
+            Meaux.
           </p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61570223021498" target="_blank" rel="noopener noreferrer"
+              class="footer-social-link" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/asso_lessamaritains/" target="_blank" rel="noopener noreferrer"
+              class="footer-social-link" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="mailto:assoslsm@gmail.com" class="footer-social-link" aria-label="Email">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Liens Rapides</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Accueil</a></li>
+            <li><a href="./index.html#mission">Notre Mission</a></li>
+            <li><a href="./action.html">Nos Actions</a></li>
+            <li><a href="./new.html">Actualités</a></li>
+            <li><a href="./index.html#equipe">L'Équipe</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links footer-contact-list">
+            <li><span class="footer-contact-icon">✉️</span><a href="mailto:assoslsm@gmail.com">assoslsm@gmail.com</a>
+            </li>
+            <li><span class="footer-contact-icon">📍</span><span>77100 Meaux, France</span></li>
+            <li><span class="footer-contact-icon">🕒</span><span>Lun-Ven: 9h-17h<br>Sam: 9h-12h</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Nous Soutenir</h4>
+          <p class="footer-description">Chaque geste compte. Rejoignez notre cause ou faites un don pour aider ceux qui
+            en ont besoin.</p>
+          <div class="footer-cta-buttons">
+            <a href="./index.html#don" class="btn btn-primary btn-sm">💝 Faire un don</a>
+            <a href="./index.html#contact" class="btn btn-secondary btn-sm">Devenir bénévole</a>
+          </div>
         </div>
       </div>
-    </footer>
+      <div class="footer-bottom">
+        <p class="footer-text">© 2024 Les Samaritains — Association loi 1901. Tous droits réservés.</p>
+        <p class="footer-text">Fait avec <span class="footer-heart">♥</span> à Meaux</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="./public/js/main.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="./public/js/main.js"></script>
+</body>
+
 </html>
