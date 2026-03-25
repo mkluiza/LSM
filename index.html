@@ -40,13 +40,13 @@
       <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
       <li><a href="#mission" class="mobile-nav-link">Mission</a></li>
       <li><a href="./action.html" class="mobile-nav-link">Actions</a></li>
-      <li><a href="#equipe" class="mobile-nav-link">Équipe</a></li>
-      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      <li><a href="./contact.html" class="mobile-nav-link">Contact</a></li>
       <li><a href="./new.html" class="mobile-nav-link">Actualités</a></li>
+      <li><a href="./don.html" class="mobile-nav-link">Faire un don</a></li>
     </ul>
     <div class="mobile-nav-footer">
       <a href="./index-en.html" class="lang-switch" style="margin-bottom: var(--space-3); width: 100%;">English</a>
-      <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+      <a href="./don.html" class="btn btn-primary">💝 Faire un don</a>
     </div>
   </nav>
 
@@ -65,14 +65,14 @@
           <li><a href="#accueil" class="nav-link">Accueil</a></li>
           <li><a href="#mission" class="nav-link">Mission</a></li>
           <li><a href="./action.html" class="nav-link">Actions</a></li>
-          <li><a href="#equipe" class="nav-link">Équipe</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
           <li><a href="./new.html" class="nav-link">Actualités</a></li>
+          <li><a href="./don.html" class="nav-link">Faire un don</a></li>
         </ul>
 
         <div class="nav-right">
           <a href="./index-en.html" class="lang-switch" title="English">EN</a>
-          <a href="#don" class="btn btn-primary">💝 Faire un don</a>
+          <a href="./don.html" class="btn btn-primary">💝 Faire un don</a>
         </div>
 
         <button class="mobile-menu-btn" aria-label="Menu">
@@ -110,7 +110,7 @@
 
       <div class="hero-actions">
         <a href="./action.html" class="btn btn-primary btn-lg">Découvrir nos actions</a>
-        <a href="#contact" class="btn btn-secondary btn-lg">Devenir bénévole</a>
+        <a href="./contact.html" class="btn btn-secondary btn-lg">Devenir bénévole</a>
       </div>
     </div>
 
@@ -284,116 +284,22 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact section" id="contact">
+  <!-- Contact & Donation CTA -->
+  <section class="cta-banner section" id="contact">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">Nous Contacter</h2>
-        <p class="section-description">
-          Une question ? Envie de rejoindre l'équipe ? Écrivez-nous !
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-form-card reveal">
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name" class="form-label">Nom complet</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom et prénom" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone" class="form-label">Téléphone</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="06 12 34 56 78" />
-            </div>
-
-            <div class="form-group">
-              <label for="subject" class="form-label">Sujet</label>
-              <select id="subject" name="subject" class="form-select" required>
-                <option value="">Choisir un sujet</option>
-                <option value="benevole">Devenir bénévole</option>
-                <option value="don">Faire un don / Reçu fiscal</option>
-                <option value="aide">Demander de l'aide</option>
-                <option value="partenariat">Partenariat</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Votre message..."
-                required></textarea>
-            </div>
-
-            <button type="submit" class="form-submit">Envoyer le message</button>
-          </form>
+      <div class="cta-grid reveal">
+        <div class="cta-card cta-card-contact">
+          <div class="cta-card-icon">✉️</div>
+          <h3>Nous Contacter</h3>
+          <p>Une question ? Envie de devenir bénévole ? Écrivez-nous !</p>
+          <a href="./contact.html" class="btn btn-outline btn-lg">Contactez-nous</a>
         </div>
-
-        <div class="contact-info reveal reveal-delay-2">
-          <h3>Informations</h3>
-          <p>
-            N'hésitez pas à nous contacter pour toute information ou pour
-            rejoindre notre équipe de bénévoles.
-          </p>
-
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-item-icon">✉️</div>
-              <span class="contact-item-text">assoslsm@gmail.com</span>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon">📍</div>
-              <span class="contact-item-text">77100 Meaux, France</span>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon">🕒</div>
-              <span class="contact-item-text">Lun-Ven: 9h-17h | Sam: 9h-12h</span>
-            </div>
-          </div>
-
-          <div class="volunteer-cta">
-            <h4>Devenir Bénévole</h4>
-            <p>
-              Rejoignez notre équipe ! Nous recherchons des bénévoles motivés
-              pour nos différentes missions.
-            </p>
-          </div>
+        <div class="cta-card cta-card-donate" id="don">
+          <div class="cta-card-icon">💝</div>
+          <h3>Faire un Don</h3>
+          <p>Votre soutien change des vies. Retrouvez nos coordonnées bancaires.</p>
+          <a href="./don.html" class="btn btn-primary btn-lg">Faire un don</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Donation Section -->
-  <section class="donation section" id="don">
-    <div class="container">
-      <div class="donation-card reveal">
-        <div class="donation-icon">🎁</div>
-        <h3>Faire un Don</h3>
-        <p>
-          Votre soutien nous permet de continuer à aider ceux qui en ont besoin.
-        </p>
-
-        <div class="donation-info">
-          <p>
-            Vous souhaitez soutenir notre association ?<br>
-            Contactez-nous via le formulaire ci-dessus, et nous vous
-            transmettrons les informations bancaires pour effectuer un don en
-            toute sécurité. Merci pour votre soutien ! 💙
-          </p>
-        </div>
-
-        <p class="donation-note">
-          Si vous souhaitez un reçu fiscal, n'oubliez pas de nous le faire
-          savoir avec votre nom et adresse complète.
-        </p>
       </div>
     </div>
   </section>
@@ -445,6 +351,7 @@
             <li><a href="./action.html">Nos Actions</a></li>
             <li><a href="./new.html">Actualités</a></li>
             <li><a href="#equipe">L'Équipe</a></li>
+            <li><a href="./contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -474,8 +381,8 @@
             Chaque geste compte. Rejoignez notre cause ou faites un don pour aider ceux qui en ont besoin.
           </p>
           <div class="footer-cta-buttons">
-            <a href="#don" class="btn btn-primary btn-sm">💝 Faire un don</a>
-            <a href="#contact" class="btn btn-secondary btn-sm">Devenir bénévole</a>
+            <a href="./don.html" class="btn btn-primary btn-sm">💝 Faire un don</a>
+            <a href="./contact.html" class="btn btn-secondary btn-sm">Devenir bénévole</a>
           </div>
         </div>
       </div>
