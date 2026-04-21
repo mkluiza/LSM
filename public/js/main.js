@@ -40,6 +40,7 @@
         initLoadingScreen();
         initHeader();
         initMobileNav();
+        initLanguageMenu();
         initContactForm();
         initScrollReveal();
         initSmoothScroll();
@@ -139,6 +140,24 @@
         // Close on escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeNav();
+        });
+    }
+
+    // ==========================================================================
+    // Language Menu
+    // ==========================================================================
+
+    function initLanguageMenu() {
+        const menus = document.querySelectorAll('.language-menu');
+        if (!menus.length) return;
+
+        menus.forEach(menu => {
+            menu.addEventListener('change', () => {
+                const targetUrl = menu.value;
+                if (targetUrl && targetUrl !== '#') {
+                    window.location.href = targetUrl;
+                }
+            });
         });
     }
 
@@ -288,18 +307,48 @@
         const footerBottom = document.querySelector('.footer-bottom');
         if (!footerBottom || footerBottom.querySelector('.footer-legal-links')) return;
 
-        const isEnglish = document.documentElement.lang === 'en';
+        const lang = document.documentElement.lang;
         const legalLinks = document.createElement('p');
         legalLinks.className = 'footer-legal-links';
 
-        const termsLabel = isEnglish ? 'Terms & Conditions' : 'Termeni și condiții';
-        const cookiesLabel = isEnglish ? 'Cookies Policy' : 'Politica cookies';
-        const privacyLabel = isEnglish ? 'Privacy Policy' : 'Politica de confidențialitate';
-        const termsPath = isEnglish ? './terms-en.html' : './terms.html';
-        const cookiesPath = isEnglish ? './cookies-en.html' : './cookies.html';
-        const privacyPath = isEnglish ? './privacy-en.html' : './privacy.html';
+        const labelsByLang = {
+            en: {
+                terms: 'Terms & Conditions',
+                cookies: 'Cookies Policy',
+                privacy: 'Privacy Policy',
+                termsPath: './terms-en.html',
+                cookiesPath: './cookies-en.html',
+                privacyPath: './privacy-en.html'
+            },
+            ro: {
+                terms: 'Termeni și condiții',
+                cookies: 'Politica cookies',
+                privacy: 'Politica de confidențialitate',
+                termsPath: './terms-ro.html',
+                cookiesPath: './cookies-ro.html',
+                privacyPath: './privacy-ro.html'
+            },
+            es: {
+                terms: 'Términos y condiciones',
+                cookies: 'Política de cookies',
+                privacy: 'Política de privacidad',
+                termsPath: './terms-es.html',
+                cookiesPath: './cookies-es.html',
+                privacyPath: './privacy-es.html'
+            },
+            fr: {
+                terms: 'Conditions générales',
+                cookies: 'Politique de cookies',
+                privacy: 'Politique de confidentialité',
+                termsPath: './terms.html',
+                cookiesPath: './cookies.html',
+                privacyPath: './privacy.html'
+            }
+        };
 
-        legalLinks.innerHTML = `<a href="${termsPath}">${termsLabel}</a> · <a href="${cookiesPath}">${cookiesLabel}</a> · <a href="${privacyPath}">${privacyLabel}</a>`;
+        const labels = labelsByLang[lang] || labelsByLang.fr;
+
+        legalLinks.innerHTML = `<a href="${labels.termsPath}">${labels.terms}</a> · <a href="${labels.cookiesPath}">${labels.cookies}</a> · <a href="${labels.privacyPath}">${labels.privacy}</a>`;
         footerBottom.appendChild(legalLinks);
     }
 
@@ -312,8 +361,40 @@
         const savedChoice = localStorage.getItem(STORAGE_KEY);
         if (savedChoice === 'accepted' || savedChoice === 'rejected') return;
 
-        const isEnglish = document.documentElement.lang === 'en';
-        const cookiesPolicyPath = isEnglish ? './cookies-en.html' : './cookies.html';
+        const lang = document.documentElement.lang;
+
+        const contentByLang = {
+            en: {
+                text: 'We use cookies to improve your browsing experience. You can accept or refuse non-essential cookies. ',
+                linkText: 'Learn more',
+                refuse: 'Refuse',
+                accept: 'Accept',
+                policyPath: './cookies-en.html'
+            },
+            ro: {
+                text: 'Folosim cookies pentru a îmbunătăți experiența de navigare. Puteți accepta sau refuza cookies neesențiale. ',
+                linkText: 'Află mai multe',
+                refuse: 'Refuz',
+                accept: 'Accept',
+                policyPath: './cookies-ro.html'
+            },
+            es: {
+                text: 'Usamos cookies para mejorar su experiencia de navegación. Puede aceptar o rechazar las cookies no esenciales. ',
+                linkText: 'Más información',
+                refuse: 'Rechazar',
+                accept: 'Aceptar',
+                policyPath: './cookies-es.html'
+            },
+            fr: {
+                text: 'Nous utilisons des cookies pour améliorer votre navigation. Vous pouvez accepter ou refuser les cookies non essentiels. ',
+                linkText: 'En savoir plus',
+                refuse: 'Refuser',
+                accept: 'Accepter',
+                policyPath: './cookies.html'
+            }
+        };
+
+        const i18n = contentByLang[lang] || contentByLang.fr;
 
         const banner = document.createElement('div');
         banner.className = 'cookie-banner';
@@ -322,18 +403,15 @@
         banner.innerHTML = `
             <div class="cookie-banner-content">
                 <p class="cookie-banner-text">
-                    ${isEnglish
-                ? 'We use cookies to improve your browsing experience. You can accept or refuse non-essential cookies. '
-                : 'Nous utilisons des cookies pour améliorer votre navigation. Vous pouvez accepter ou refuser les cookies non essentiels. '
-            }
-                    <a href="${cookiesPolicyPath}">${isEnglish ? 'Learn more' : 'En savoir plus'}</a>
+                    ${i18n.text}
+                    <a href="${i18n.policyPath}">${i18n.linkText}</a>
                 </p>
                 <div class="cookie-banner-actions">
                     <button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-choice="rejected">
-                        ${isEnglish ? 'Refuse' : 'Refuser'}
+                        ${i18n.refuse}
                     </button>
                     <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-choice="accepted">
-                        ${isEnglish ? 'Accept' : 'Accepter'}
+                        ${i18n.accept}
                     </button>
                 </div>
             </div>
@@ -370,12 +448,17 @@
             const payload = await response.json();
             if (!payload || payload.success !== true || !payload.counters) return;
 
-            const isEnglish = document.documentElement.lang === 'en';
+            const lang = document.documentElement.lang;
             const { total, today } = payload.counters;
 
-            const counterText = isEnglish
-                ? `Visits: ${total} total · ${today} today`
-                : `Vizite: ${total} total · ${today} azi`;
+            const counterTextByLang = {
+                en: `Visits: ${total} total · ${today} today`,
+                ro: `Vizite: ${total} total · ${today} azi`,
+                es: `Visitas: ${total} total · ${today} hoy`,
+                fr: `Visites : ${total} total · ${today} aujourd'hui`
+            };
+
+            const counterText = counterTextByLang[lang] || counterTextByLang.fr;
 
             let counterElement = footerBottom.querySelector('.footer-visit-counter');
             if (!counterElement) {
