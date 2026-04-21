@@ -43,6 +43,8 @@
         initContactForm();
         initScrollReveal();
         initSmoothScroll();
+        initFooterLegalLinks();
+        initCookieConsent();
     }
 
     // ==========================================================================
@@ -273,6 +275,75 @@
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
+            });
+        });
+    }
+
+    // ==========================================================================
+    // Legal Links in Footer
+    // ==========================================================================
+
+    function initFooterLegalLinks() {
+        const footerBottom = document.querySelector('.footer-bottom');
+        if (!footerBottom || footerBottom.querySelector('.footer-legal-links')) return;
+
+        const isEnglish = document.documentElement.lang === 'en';
+        const legalLinks = document.createElement('p');
+        legalLinks.className = 'footer-legal-links';
+
+        const termsLabel = isEnglish ? 'Terms & Conditions' : 'Termeni și condiții';
+        const cookiesLabel = isEnglish ? 'Cookies Policy' : 'Politica cookies';
+        const termsPath = isEnglish ? './terms-en.html' : './terms.html';
+        const cookiesPath = isEnglish ? './cookies-en.html' : './cookies.html';
+
+        legalLinks.innerHTML = `<a href="${termsPath}">${termsLabel}</a> · <a href="${cookiesPath}">${cookiesLabel}</a>`;
+        footerBottom.appendChild(legalLinks);
+    }
+
+    // ==========================================================================
+    // Cookie Consent Banner
+    // ==========================================================================
+
+    function initCookieConsent() {
+        const STORAGE_KEY = 'lsm_cookie_consent';
+        const savedChoice = localStorage.getItem(STORAGE_KEY);
+        if (savedChoice === 'accepted' || savedChoice === 'rejected') return;
+
+        const isEnglish = document.documentElement.lang === 'en';
+        const cookiesPolicyPath = isEnglish ? './cookies-en.html' : './cookies.html';
+
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-live', 'polite');
+        banner.innerHTML = `
+            <div class="cookie-banner-content">
+                <p class="cookie-banner-text">
+                    ${isEnglish
+                ? 'We use cookies to improve your browsing experience. You can accept or refuse non-essential cookies. '
+                : 'Nous utilisons des cookies pour améliorer votre navigation. Vous pouvez accepter ou refuser les cookies non essentiels. '
+            }
+                    <a href="${cookiesPolicyPath}">${isEnglish ? 'Learn more' : 'En savoir plus'}</a>
+                </p>
+                <div class="cookie-banner-actions">
+                    <button type="button" class="cookie-btn cookie-btn-secondary" data-cookie-choice="rejected">
+                        ${isEnglish ? 'Refuse' : 'Refuser'}
+                    </button>
+                    <button type="button" class="cookie-btn cookie-btn-primary" data-cookie-choice="accepted">
+                        ${isEnglish ? 'Accept' : 'Accepter'}
+                    </button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(banner);
+
+        banner.querySelectorAll('[data-cookie-choice]').forEach(button => {
+            button.addEventListener('click', () => {
+                const choice = button.getAttribute('data-cookie-choice');
+                localStorage.setItem(STORAGE_KEY, choice);
+                banner.classList.add('hidden');
+                setTimeout(() => banner.remove(), 250);
             });
         });
     }
