@@ -438,7 +438,14 @@
         if (!footerBottom) return;
 
         try {
-            const response = await fetch('./counter.php', {
+            // Increment counter on page load
+            await fetch('/counter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            // Fetch current counts
+            const response = await fetch('/counter', {
                 cache: 'no-store',
                 headers: { 'Accept': 'application/json' }
             });
@@ -469,7 +476,7 @@
 
             counterElement.textContent = counterText;
         } catch (error) {
-            // Counter is optional in local/non-PHP environments.
+            // Counter is optional in non-Node environments
             console.debug('Visit counter unavailable:', error);
         }
     }

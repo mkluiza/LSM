@@ -18,6 +18,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Counter data (persistent, not in git)
+counter-data.json
 *.swp
 *.swo
 
