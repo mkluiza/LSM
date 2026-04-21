@@ -583,6 +583,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.mobile-nav-footer .lang-switch {
+  color: var(--color-text);
+  background: var(--color-surface-elevated);
+  border-color: var(--color-border);
+}
+
+.mobile-nav-footer .lang-switch:hover {
+  color: var(--color-primary);
+  background: var(--red-50);
+  border-color: var(--color-primary);
+}
+
 /* ==========================================================================
    6. Hero Section
    ========================================================================== */
