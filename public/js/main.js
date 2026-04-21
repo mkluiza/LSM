@@ -45,6 +45,7 @@
         initSmoothScroll();
         initFooterLegalLinks();
         initCookieConsent();
+        initVisitCounter();
     }
 
     // ==========================================================================
@@ -293,10 +294,12 @@
 
         const termsLabel = isEnglish ? 'Terms & Conditions' : 'Termeni și condiții';
         const cookiesLabel = isEnglish ? 'Cookies Policy' : 'Politica cookies';
+        const privacyLabel = isEnglish ? 'Privacy Policy' : 'Politica de confidențialitate';
         const termsPath = isEnglish ? './terms-en.html' : './terms.html';
         const cookiesPath = isEnglish ? './cookies-en.html' : './cookies.html';
+        const privacyPath = isEnglish ? './privacy-en.html' : './privacy.html';
 
-        legalLinks.innerHTML = `<a href="${termsPath}">${termsLabel}</a> · <a href="${cookiesPath}">${cookiesLabel}</a>`;
+        legalLinks.innerHTML = `<a href="${termsPath}">${termsLabel}</a> · <a href="${cookiesPath}">${cookiesLabel}</a> · <a href="${privacyPath}">${privacyLabel}</a>`;
         footerBottom.appendChild(legalLinks);
     }
 
@@ -346,6 +349,46 @@
                 setTimeout(() => banner.remove(), 250);
             });
         });
+    }
+
+    // ==========================================================================
+    // Visit Counter (PHP endpoint)
+    // ==========================================================================
+
+    async function initVisitCounter() {
+        const footerBottom = document.querySelector('.footer-bottom');
+        if (!footerBottom) return;
+
+        try {
+            const response = await fetch('./counter.php', {
+                cache: 'no-store',
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (!response.ok) return;
+
+            const payload = await response.json();
+            if (!payload || payload.success !== true || !payload.counters) return;
+
+            const isEnglish = document.documentElement.lang === 'en';
+            const { total, today } = payload.counters;
+
+            const counterText = isEnglish
+                ? `Visits: ${total} total · ${today} today`
+                : `Vizite: ${total} total · ${today} azi`;
+
+            let counterElement = footerBottom.querySelector('.footer-visit-counter');
+            if (!counterElement) {
+                counterElement = document.createElement('p');
+                counterElement.className = 'footer-text footer-visit-counter';
+                footerBottom.appendChild(counterElement);
+            }
+
+            counterElement.textContent = counterText;
+        } catch (error) {
+            // Counter is optional in local/non-PHP environments.
+            console.debug('Visit counter unavailable:', error);
+        }
     }
 
 })();

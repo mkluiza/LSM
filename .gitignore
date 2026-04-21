@@ -29,3 +29,6 @@ build/
 credentials.txt
 *.pem
 *.key
+
+# Runtime counter storage (must stay on server, not in git)
+counter-data.json
