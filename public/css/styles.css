@@ -1261,6 +1261,40 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.contact-social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.contact-social-label {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.contact-social-link:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
 .volunteer-cta {
   padding: var(--space-6);
   background: rgba(245, 158, 11, 0.15);
