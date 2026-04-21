@@ -1547,6 +1547,11 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.4);
 }
 
+.footer-legal {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .footer-heart {
   color: var(--color-primary);
   animation: heartbeat 1.5s infinite;
