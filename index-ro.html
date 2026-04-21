@@ -16,7 +16,12 @@
 </head>
 
 <body>
-    <div class="mobile-nav-overlay"></div>
+  <div class="loading-screen">
+    <div class="loading-spinner"></div>
+    <span class="loading-text">Se încarcă...</span>
+  </div>
+
+  <div class="mobile-nav-overlay"></div>
 
     <nav class="mobile-nav">
         <div class="mobile-nav-header">
@@ -78,7 +83,13 @@
     </header>
 
     <section class="hero" id="acasa">
-        <div class="hero-content">
+    <div class="hero-shapes">
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
+      <div class="hero-shape"></div>
+    </div>
+
+    <div class="hero-content">
             <div class="hero-badge"><span class="hero-badge-dot"></span>Asociație solidară din 2024</div>
             <h1 class="hero-title">Împreună pentru<br><span class="hero-title-accent">Solidaritate</span></h1>
             <p class="hero-description">Les Samaritains sprijină persoanele și familiile aflate în dificultate prin
@@ -88,6 +99,10 @@
                 <a href="./contact-ro.html" class="btn btn-secondary btn-lg">Devino voluntar</a>
             </div>
         </div>
+    <div class="scroll-indicator">
+      <div class="scroll-indicator-mouse"></div>
+      <span>Derulați</span>
+    </div>
     </section>
 
     <section class="mission section" id="misiune">
@@ -95,8 +110,45 @@
             <div class="section-header reveal">
                 <span class="section-label">Misiunea noastră</span>
                 <h2 class="section-title">Ajutor real pentru comunitate</h2>
-                <p class="section-description">Construim o punte între cei care pot ajuta și cei care au nevoie de
-                    sprijin.</p>
+                <p class="section-description">Construim o punte între cei care pot ajuta și cei care au nevoie de sprijin.</p>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-content reveal">
+                    <h2>Solidaritate & Ajutor Reciproc</h2>
+                    <p>
+                        De aproape un an, Les Samaritains se implică zilnic
+                        alături de persoanele și familiile în dificultate. Misiunea noastră este
+                        de a crea o punte între cei care pot ajuta și cei care au nevoie.
+                    </p>
+                    <p>
+                        Credem cu tărie că fiecare gest contează și că solidaritatea
+                        este cheia pentru a construi o societate mai dreaptă și echitabilă pentru toți.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-value">+100</span>
+                            <span class="stat-label">Persoane ajutate</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">10</span>
+                            <span class="stat-label">Voluntari activi</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">1 an</span>
+                            <span class="stat-label">de experiență</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">95%</span>
+                            <span class="stat-label">Fonduri redistribuite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-image reveal reveal-delay-2">
+                    <img src="./Vista Logos/sam_rouge.webp" alt="Misiune solidaritate - Echipa Les Samaritains" />
+                </div>
             </div>
         </div>
     </section>
@@ -111,27 +163,27 @@
             </div>
             <div class="actions-grid">
                 <div class="action-card reveal">
-                    <div class="action-card-icon">🍎</div>
+                    <div class="action-icon">🍎</div>
                     <h3>Ajutor Alimentar</h3>
                     <p>Distribuire de alimente și mese calde pentru persoanele și familiile în dificultate.</p>
                 </div>
                 <div class="action-card reveal reveal-delay-1">
-                    <div class="action-card-icon">👗</div>
+                    <div class="action-icon">👗</div>
                     <h3>Vestimentar</h3>
                     <p>Colectare și distribuire de haine pentru toate vârstele.</p>
                 </div>
                 <div class="action-card reveal reveal-delay-2">
-                    <div class="action-card-icon">📚</div>
+                    <div class="action-icon">📚</div>
                     <h3>Ajutor Școlar</h3>
                     <p>Sprijin educațional și distribuire de rechizite pentru copii din familii vulnerabile.</p>
                 </div>
                 <div class="action-card reveal">
-                    <div class="action-card-icon">❤️</div>
+                    <div class="action-icon">❤️</div>
                     <h3>Sănătate și Bunăstare</h3>
                     <p>Îndrumare și orientare pentru accesul la servicii de sănătate și asistență socială.</p>
                 </div>
                 <div class="action-card reveal reveal-delay-1">
-                    <div class="action-card-icon">🤝</div>
+                    <div class="action-icon">🤝</div>
                     <h3>Activități Sociale</h3>
                     <p>Evenimente și activități comunitare pentru a combate izolarea socială.</p>
                 </div>
@@ -149,38 +201,56 @@
             </div>
             <div class="team-grid">
                 <div class="team-card reveal">
-                    <div class="team-avatar">CM</div>
-                    <h3>Calin M.</h3>
-                    <p class="team-role">Co-fondator</p>
+                    <div class="team-avatar">👨‍💼</div>
+                    <div class="team-info">
+                        <h3>Calin M.</h3>
+                        <p class="team-role">Președinte</p>
+                        <p>Fondatorul asociației, coordonează acțiunile și dezvoltă parteneriatele.</p>
+                    </div>
                 </div>
                 <div class="team-card reveal reveal-delay-1">
-                    <div class="team-avatar">MM</div>
-                    <h3>Madalina M.</h3>
-                    <p class="team-role">Co-fondatoare</p>
+                    <div class="team-avatar">👩‍💼</div>
+                    <div class="team-info">
+                        <h3>Madalina M.</h3>
+                        <p class="team-role">Vicepreședintă</p>
+                        <p>Responsabilă pentru ajutorul alimentar și coordonarea voluntarilor.</p>
+                    </div>
                 </div>
                 <div class="team-card reveal reveal-delay-2">
-                    <div class="team-avatar">EC</div>
-                    <h3>Enzo C.</h3>
-                    <p class="team-role">Voluntar</p>
+                    <div class="team-avatar">👨‍🏫</div>
+                    <div class="team-info">
+                        <h3>Enzo C.</h3>
+                        <p class="team-role">Trezorier</p>
+                        <p>Gestiunea financiară și administrativă a asociației.</p>
+                    </div>
                 </div>
-                <div class="team-card reveal">
-                    <div class="team-avatar">LM</div>
-                    <h3>Luiza M.</h3>
-                    <p class="team-role">Voluntară</p>
+                <div class="team-card reveal reveal-delay-3">
+                    <div class="team-avatar">👩‍🎓</div>
+                    <div class="team-info">
+                        <h3>Luiza M.</h3>
+                        <p class="team-role">Secretară și WebDev</p>
+                        <p>Responsabilă comunicare, administrare și evenimente.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Banner CTA -->
-    <section class="cta-banner section">
+    <!-- Contact & Donation CTA -->
+    <section class="cta-banner section" id="contact">
         <div class="container">
-            <div class="cta-content reveal">
-                <h2>Contactează-ne</h2>
-                <p>Vrei să ajuți sau ai nevoie de sprijin? Suntem aici pentru tine.</p>
-                <div class="cta-actions">
-                    <a href="./don-ro.html" class="btn btn-primary btn-lg">💝 Donează</a>
-                    <a href="./contact-ro.html" class="btn btn-secondary btn-lg">Devino voluntar</a>
+            <div class="cta-grid reveal">
+                <div class="cta-card cta-card-contact">
+                    <div class="cta-card-icon">✉️</div>
+                    <h3>Contactați-ne</h3>
+                    <p>O întrebare? Doriți să deveniți voluntar? Scrieți-ne!</p>
+                    <a href="./contact-ro.html" class="btn btn-outline btn-lg">Contactați-ne</a>
+                </div>
+                <div class="cta-card cta-card-donate" id="dona">
+                    <div class="cta-card-icon">💝</div>
+                    <h3>Faceți o Donație</h3>
+                    <p>Sprijinul dumneavoastră schimbă vieți. Găsiți coordonatele noastre bancare.</p>
+                    <a href="./don-ro.html" class="btn btn-primary btn-lg">Donați</a>
                 </div>
             </div>
         </div>
@@ -247,10 +317,12 @@
             <div class="footer-bottom">
                 <p class="footer-text">© 2024 Les Samaritains — Association loi 1901. Toate drepturile rezervate.</p>
                 <p class="footer-text">Făcut cu <span class="footer-heart">♥</span> la Meaux</p>
+                <p class="footer-legal">Association loi 1901</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="./public/js/main.js"></script>
 </body>
 
