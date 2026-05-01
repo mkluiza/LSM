@@ -438,21 +438,28 @@
         if (!footerBottom) return;
 
         try {
-            // Increment counter on page load
-            await fetch('/counter', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' }
-            });
+            const alreadyCounted = sessionStorage.getItem('lsm_visited');
+            let payload;
 
-            // Fetch current counts
-            const response = await fetch('/counter', {
-                cache: 'no-store',
-                headers: { 'Accept': 'application/json' }
-            });
+            if (!alreadyCounted) {
+                // First page view of this session: increment counter
+                const response = await fetch('/counter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                if (!response.ok) return;
+                payload = await response.json();
+                sessionStorage.setItem('lsm_visited', '1');
+            } else {
+                // Already counted this session: just read the current value
+                const response = await fetch('/counter', {
+                    cache: 'no-store',
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) return;
+                payload = await response.json();
+            }
 
-            if (!response.ok) return;
-
-            const payload = await response.json();
             if (!payload || payload.success !== true || !payload.counters) return;
 
             const lang = document.documentElement.lang;
@@ -460,8 +467,6 @@
 
             const counterTextByLang = {
                 en: `Visits: ${total} total · ${today} today`,
-                ro: `Vizite: ${total} total · ${today} azi`,
-                es: `Visitas: ${total} total · ${today} hoy`,
                 fr: `Visites : ${total} total · ${today} aujourd'hui`
             };
 
