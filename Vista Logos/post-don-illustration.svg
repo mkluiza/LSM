@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="60%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1a0a0a"/>
+    </linearGradient>
+
+    <!-- Red glow -->
+    <radialGradient id="redGlow" cx="35%" cy="60%" r="45%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Gold glow -->
+    <radialGradient id="goldGlow" cx="70%" cy="35%" r="40%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Heart gradient -->
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#991b1b"/>
+    </linearGradient>
+
+    <!-- Gold gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+
+    <!-- Hand gradient left -->
+    <linearGradient id="handL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#7f1d1d"/>
+    </linearGradient>
+
+    <!-- Hand gradient right -->
+    <linearGradient id="handR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#92400e"/>
+    </linearGradient>
+
+    <!-- Text bar gradient -->
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0"/>
+    </linearGradient>
+
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="heartGlow">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  <rect width="800" height="500" fill="url(#redGlow)"/>
+  <rect width="800" height="500" fill="url(#goldGlow)"/>
+
+  <!-- Decorative circles (abstract) -->
+  <circle cx="650" cy="80" r="120" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.12"/>
+  <circle cx="650" cy="80" r="90" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity="0.1"/>
+  <circle cx="150" cy="400" r="100" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.12"/>
+  <circle cx="150" cy="400" r="70" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.09"/>
+
+  <!-- Subtle dot grid -->
+  <g opacity="0.07">
+    <circle cx="50" cy="50" r="2" fill="#fff"/>  <circle cx="110" cy="50" r="2" fill="#fff"/>
+    <circle cx="170" cy="50" r="2" fill="#fff"/>  <circle cx="230" cy="50" r="2" fill="#fff"/>
+    <circle cx="50" cy="110" r="2" fill="#fff"/> <circle cx="110" cy="110" r="2" fill="#fff"/>
+    <circle cx="170" cy="110" r="2" fill="#fff"/> <circle cx="230" cy="110" r="2" fill="#fff"/>
+    <circle cx="560" cy="350" r="2" fill="#fff"/> <circle cx="620" cy="350" r="2" fill="#fff"/>
+    <circle cx="680" cy="350" r="2" fill="#fff"/> <circle cx="740" cy="350" r="2" fill="#fff"/>
+    <circle cx="560" cy="410" r="2" fill="#fff"/> <circle cx="620" cy="410" r="2" fill="#fff"/>
+    <circle cx="680" cy="410" r="2" fill="#fff"/> <circle cx="740" cy="410" r="2" fill="#fff"/>
+  </g>
+
+  <!-- ── GIANT WATERMARK "DONNEZ" ── -->
+  <text x="400" y="360" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="220" font-weight="900"
+        fill="none" stroke="#ef4444" stroke-width="1" opacity="0.07" text-anchor="middle" letter-spacing="-4">Faites un don</text>
+
+  <!-- ── RIGHT SIDE BOLD "DONNEZ" ── -->
+  <text x="590" y="110" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="38" font-weight="900"
+        fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.55" text-anchor="middle" letter-spacing="2">Faites un don</text>
+  <text x="590" y="110" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="38" font-weight="900"
+        fill="url(#goldGrad)" opacity="0.9" text-anchor="middle" letter-spacing="2">Faites un don</text>
+
+  <!-- ── LEFT HAND (giving) ── -->
+  <g transform="translate(95, 220) rotate(-20)">
+    <!-- palm -->
+    <ellipse cx="55" cy="95" rx="45" ry="35" fill="url(#handL)" opacity="0.92"/>
+    <!-- thumb -->
+    <ellipse cx="10" cy="80" rx="13" ry="22" fill="url(#handL)" opacity="0.9" transform="rotate(-20, 10, 80)"/>
+    <!-- fingers -->
+    <rect x="20" y="42" width="14" height="55" rx="7" fill="url(#handL)" opacity="0.9"/>
+    <rect x="37" y="35" width="14" height="62" rx="7" fill="url(#handL)" opacity="0.9"/>
+    <rect x="54" y="38" width="14" height="58" rx="7" fill="url(#handL)" opacity="0.9"/>
+    <rect x="70" y="44" width="13" height="52" rx="6" fill="url(#handL)" opacity="0.9"/>
+    <!-- wrist -->
+    <rect x="20" y="110" width="65" height="30" rx="8" fill="url(#handL)" opacity="0.85"/>
+  </g>
+
+  <!-- ── RIGHT HAND (receiving) ── -->
+  <g transform="translate(540, 215) rotate(20) scale(-1,1) translate(-110, 0)">
+    <!-- palm -->
+    <ellipse cx="55" cy="95" rx="45" ry="35" fill="url(#handR)" opacity="0.92"/>
+    <!-- thumb -->
+    <ellipse cx="10" cy="80" rx="13" ry="22" fill="url(#handR)" opacity="0.9" transform="rotate(-20, 10, 80)"/>
+    <!-- fingers -->
+    <rect x="20" y="42" width="14" height="55" rx="7" fill="url(#handR)" opacity="0.9"/>
+    <rect x="37" y="35" width="14" height="62" rx="7" fill="url(#handR)" opacity="0.9"/>
+    <rect x="54" y="38" width="14" height="58" rx="7" fill="url(#handR)" opacity="0.9"/>
+    <rect x="70" y="44" width="13" height="52" rx="6" fill="url(#handR)" opacity="0.9"/>
+    <!-- wrist -->
+    <rect x="20" y="110" width="65" height="30" rx="8" fill="url(#handR)" opacity="0.85"/>
+  </g>
+
+  <!-- ── BIG HEART in the centre ── -->
+  <!-- glow behind heart -->
+  <path d="M400 310 C400 310 310 255 310 200 C310 172 332 152 360 152 C378 152 393 161 400 174 C407 161 422 152 440 152 C468 152 490 172 490 200 C490 255 400 310 400 310 Z"
+        fill="#ef4444" opacity="0.35" filter="url(#softBlur)" transform="scale(1.25) translate(-80,-38)"/>
+  <!-- main heart -->
+  <path d="M400 310 C400 310 310 255 310 200 C310 172 332 152 360 152 C378 152 393 161 400 174 C407 161 422 152 440 152 C468 152 490 172 490 200 C490 255 400 310 400 310 Z"
+        fill="url(#heartGrad)" filter="url(#heartGlow)"/>
+  <!-- heart shine -->
+  <ellipse cx="370" cy="185" rx="12" ry="8" fill="#fff" opacity="0.22" transform="rotate(-30,370,185)"/>
+
+  <!-- Small floating hearts -->
+  <path d="M530 145 C530 145 515 135 515 125 C515 119 520 115 525 115 C527.5 115 529.5 116.5 530 119 C530.5 116.5 532.5 115 535 115 C540 115 545 119 545 125 C545 135 530 145 530 145 Z"
+        fill="#fbbf24" opacity="0.85"/>
+  <path d="M265 140 C265 140 253 131 253 123 C253 117.5 257.5 113 262 113 C264.2 113 266 114.3 266.5 116.5 C267 114.3 268.8 113 271 113 C275.5 113 280 117.5 280 123 C280 131 265 140 265 140 Z"
+        fill="#ef4444" opacity="0.7"/>
+  <path d="M580 280 C580 280 571 273 571 267 C571 263 574 260 577 260 C578.5 260 579.8 261 580 262.8 C580.2 261 581.5 260 583 260 C586 260 589 263 589 267 C589 273 580 280 580 280 Z"
+        fill="#f87171" opacity="0.6"/>
+  <path d="M215 285 C215 285 206 278 206 272 C206 268 209 265 212 265 C213.5 265 214.8 266 215 267.8 C215.2 266 216.5 265 218 265 C221 265 224 268 224 272 C224 278 215 285 215 285 Z"
+        fill="#fbbf24" opacity="0.55"/>
+
+  <!-- ── ACCENT BAR ── -->
+  <rect x="0" y="378" width="800" height="3" fill="url(#barGrad)" opacity="0.7"/>
+
+  <!-- ── TEXT ZONE ── -->
+  <!-- Tag / pill -->
+  <rect x="60" y="50" width="198" height="28" rx="14" fill="url(#goldGrad)" opacity="0.95"/>
+  <text x="159" y="69" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="11" font-weight="700"
+        fill="#fff" text-anchor="middle" letter-spacing="1">ASSOCIATION SOLIDAIRE</text>
+
+  <!-- Main headline -->
+  <text x="60" y="138" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="36" font-weight="900"
+        fill="#f8fafc" letter-spacing="-0.5">Faites la</text>
+  <text x="60" y="182" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="36" font-weight="900"
+        fill="url(#goldGrad)" letter-spacing="-0.5">différence</text>
+
+  <!-- Subtext -->
+  <text x="62" y="220" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="15.5" font-weight="700"
+        fill="#f1f5f9" letter-spacing="0.1">✦ Chaque geste compte.</text>
+  <text x="62" y="244" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="15.5" font-weight="700"
+        fill="url(#goldGrad)" letter-spacing="0.1">✦ Chaque don change une vie.</text>
+
+  <!-- Divider line -->
+  <rect x="62" y="262" width="220" height="2.5" rx="1.5" fill="url(#goldGrad)" opacity="0.9"/>
+
+  <!-- Bottom text zone -->
+  <text x="400" y="410" font-family="'Plus Jakarta Sans', 'Inter', Arial, sans-serif" font-size="21" font-weight="800"
+        fill="#f8fafc" text-anchor="middle">Les Samaritains</text>
+  <text x="400" y="438" font-family="'Inter', Arial, sans-serif" font-size="13" fill="#94a3b8"
+        text-anchor="middle">lessamaritains.fr/don.html</text>
+  <text x="400" y="462" font-family="'Inter', Arial, sans-serif" font-size="11" fill="#ef4444" opacity="0.8"
+        font-weight="600" text-anchor="middle">#solidarité  #don  #entraide  #humanité  #engagement</text>
+
+  <!-- Stars / sparkles top-right -->
+  <g fill="#fbbf24" opacity="0.6">
+    <polygon points="700,55 703,65 713,65 705,71 708,81 700,75 692,81 695,71 687,65 697,65" transform="scale(0.7) translate(300, 20)"/>
+    <polygon points="750,30 752,37 759,37 753,41 755,48 750,44 745,48 747,41 741,37 748,37" transform="scale(0.5) translate(750, 20)"/>
+    <polygon points="720,100 722,106 728,106 723,110 725,116 720,112 715,116 717,110 712,106 718,106" transform="scale(0.45) translate(900, 120)"/>
+  </g>
+</svg>

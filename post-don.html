@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faites la différence – Les Samaritains</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            padding: 24px 16px;
+        }
+
+        /* ── Poster card ── */
+        .poster {
+            position: relative;
+            width: 100%;
+            max-width: 560px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .06);
+        }
+
+        /* Hero photo */
+        .hero {
+            position: relative;
+            height: 340px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+        }
+
+        /* gradient fade from photo into card body */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(15, 23, 42, .15) 0%,
+                    rgba(15, 23, 42, .0) 40%,
+                    rgba(15, 23, 42, .85) 100%);
+        }
+
+        /* Logo badge overlaid on bottom-left of hero */
+        .hero-logo {
+            position: absolute;
+            bottom: 20px;
+            left: 24px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-logo img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2.5px solid rgba(255, 255, 255, .85);
+            background: #fff;
+            padding: 3px;
+            object-fit: contain;
+        }
+
+        .hero-logo-text {
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: .02em;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
+            line-height: 1.15;
+        }
+
+        .hero-logo-text span {
+            display: block;
+            font-size: .7rem;
+            font-weight: 500;
+            opacity: .85;
+        }
+
+        /* Gold accent pill at top-right of hero */
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 999px;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, .45);
+        }
+
+        /* ── Body ── */
+        .body {
+            background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
+            padding: 32px 32px 28px;
+            position: relative;
+        }
+
+        /* decorative left border stripe */
+        .body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ef4444, #f59e0b);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            line-height: 1.15;
+            color: #f8fafc;
+            margin-bottom: 18px;
+        }
+
+        .headline .emoji {
+            font-size: 1.5rem;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, #ef4444, #f59e0b, transparent);
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        .paragraph {
+            color: #cbd5e1;
+            font-size: .95rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .paragraph strong {
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: rgba(239, 68, 68, .1);
+            border: 1px solid rgba(239, 68, 68, .3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 18px 0;
+            color: #fca5a5;
+            font-size: .93rem;
+            line-height: 1.65;
+        }
+
+        .highlight-box .icon {
+            font-size: 1.1rem;
+            margin-right: 4px;
+        }
+
+        /* CTA button */
+        .cta-wrap {
+            margin: 22px 0 20px;
+            text-align: center;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: #fff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-decoration: none;
+            padding: 15px 32px;
+            border-radius: 999px;
+            box-shadow: 0 6px 24px rgba(220, 38, 38, .45), 0 0 0 0 rgba(220, 38, 38, .3);
+            transition: transform .18s ease, box-shadow .18s ease;
+            letter-spacing: .01em;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 32px rgba(220, 38, 38, .55);
+        }
+
+        .cta .arrow {
+            background: rgba(255, 255, 255, .2);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+        }
+
+        /* URL display */
+        .url-display {
+            text-align: center;
+            margin-top: 6px;
+            margin-bottom: 20px;
+        }
+
+        .url-display a {
+            color: #94a3b8;
+            font-size: .78rem;
+            text-decoration: none;
+            letter-spacing: .02em;
+        }
+
+        .url-display a:hover {
+            color: #f59e0b;
+        }
+
+        /* Closing message */
+        .closing {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(245, 158, 11, .08);
+            border: 1px solid rgba(245, 158, 11, .2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            color: #fde68a;
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        .closing-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Hashtags */
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .hashtag {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            color: #94a3b8;
+            font-size: .75rem;
+            font-weight: 500;
+            padding: 4px 11px;
+            border-radius: 999px;
+            letter-spacing: .03em;
+            transition: background .15s;
+        }
+
+        .hashtag:hover {
+            background: rgba(239, 68, 68, .15);
+            border-color: rgba(239, 68, 68, .3);
+            color: #fca5a5;
+        }
+
+        /* ── Footer strip ── */
+        .footer-strip {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 50%, #f59e0b 100%);
+            height: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 420px) {
+            .headline {
+                font-size: 1.35rem;
+            }
+
+            .body {
+                padding: 24px 20px 22px;
+            }
+
+            .hero {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="poster">
+
+        <!-- Hero image zone -->
+        <div class="hero">
+            <img src="./Vista Logos/help.webp" alt="Bénévole Les Samaritains accompagnant une personne âgée" />
+            <div class="badge">✨ Association reconnue</div>
+            <div class="hero-logo">
+                <img src="./Vista Logos/logo-transparent-png.png" alt="Logo Les Samaritains" />
+                <div class="hero-logo-text">
+                    Les Samaritains
+                    <span>Association solidaire</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content body -->
+        <div class="body">
+
+            <h1 class="headline">
+                <span class="emoji">💛</span> Faites la différence<br>dès aujourd'hui
+            </h1>
+
+            <div class="divider"></div>
+
+            <p class="paragraph">
+                L'association <strong>Les Samaritains</strong> agit chaque jour pour venir en aide aux personnes les
+                plus vulnérables, en apportant <strong>soutien, solidarité et espoir</strong>.
+            </p>
+
+            <p class="paragraph">
+                Grâce à l'engagement de ses bénévoles, elle accompagne ceux qui en ont le plus besoin — parce que
+                <strong>chaque geste compte ❤️</strong>
+            </p>
+
+            <div class="highlight-box">
+                <span class="icon">👉</span> Vous pouvez, vous aussi, <strong>contribuer à cette belle mission
+                    !</strong><br>
+                Chaque don, quel que soit son montant, peut <strong>changer une vie</strong>.
+            </div>
+
+            <div class="cta-wrap">
+                <a class="cta" href="https://lessamaritains.fr/don.html" target="_blank" rel="noopener">
+                    🔗 Faire un don maintenant
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <div class="url-display">
+                <a href="https://lessamaritains.fr/don.html" target="_blank" rel="noopener">
+                    lessamaritains.fr/don.html
+                </a>
+            </div>
+
+            <div class="closing">
+                <span class="closing-icon">🙏</span>
+                <span><strong>Ensemble, faisons grandir la solidarité.</strong><br>Partagez ce message pour toucher
+                    encore plus de cœurs !</span>
+            </div>
+
+            <div class="hashtags">
+                <span class="hashtag">#solidarité</span>
+                <span class="hashtag">#don</span>
+                <span class="hashtag">#entraide</span>
+                <span class="hashtag">#humanité</span>
+                <span class="hashtag">#engagement</span>
+            </div>
+
+        </div>
+
+        <div class="footer-strip"></div>
+    </div>
+
+</body>
+
+</html>
