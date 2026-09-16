@@ -1576,19 +1576,19 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.4);
 }
 
-<<<<<<< HEAD
 .footer-legal {
-=======
-.footer-counter {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
->>>>>>> 295ec18 (Add static visit counter)
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.55);
 }
 
-<<<<<<< HEAD
+.footer-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .footer-legal-links {
   font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.7);
@@ -1602,11 +1602,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-legal-links a:hover {
   color: #fff;
-=======
+}
+
 .footer-counter img {
   width: auto;
   height: 20px;
->>>>>>> 295ec18 (Add static visit counter)
 }
 
 .footer-heart {
