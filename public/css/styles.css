@@ -733,6 +733,22 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-4) var(--space-2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.hero-link:hover {
+  color: var(--color-accent);
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
