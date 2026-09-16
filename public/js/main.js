@@ -115,16 +115,37 @@
 
         if (!menuBtn || !nav) return;
 
+        const navId = nav.id || 'mobile-navigation';
+        nav.id = navId;
+        menuBtn.setAttribute('aria-controls', navId);
+        menuBtn.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+
+        const focusableSelector = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])'
+        ].join(', ');
+
         const openNav = () => {
             nav.classList.add('active');
             if (overlay) overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            menuBtn.setAttribute('aria-expanded', 'true');
+            nav.setAttribute('aria-hidden', 'false');
+            closeBtn?.focus();
         };
 
-        const closeNav = () => {
+        const closeNav = (restoreFocus = true) => {
             nav.classList.remove('active');
             if (overlay) overlay.classList.remove('active');
             document.body.style.overflow = '';
+            menuBtn.setAttribute('aria-expanded', 'false');
+            nav.setAttribute('aria-hidden', 'true');
+            if (restoreFocus) menuBtn.focus();
         };
 
         menuBtn.addEventListener('click', openNav);
@@ -138,7 +159,29 @@
 
         // Close on escape
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeNav();
+            if (!nav.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeNav();
+                return;
+            }
+
+            if (e.key !== 'Tab') return;
+
+            const focusableElements = [...nav.querySelectorAll(focusableSelector)];
+            if (!focusableElements.length) return;
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
         });
     }
 
