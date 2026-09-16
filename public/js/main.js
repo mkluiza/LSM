@@ -46,7 +46,6 @@
         initSmoothScroll();
         initFooterLegalLinks();
         initCookieConsent();
-        initVisitCounter();
     }
 
     // ==========================================================================
@@ -427,63 +426,6 @@
                 setTimeout(() => banner.remove(), 250);
             });
         });
-    }
-
-    // ==========================================================================
-    // Visit Counter (PHP endpoint)
-    // ==========================================================================
-
-    async function initVisitCounter() {
-        const footerBottom = document.querySelector('.footer-bottom');
-        if (!footerBottom) return;
-
-        try {
-            const alreadyCounted = sessionStorage.getItem('lsm_visited');
-            let payload;
-
-            if (!alreadyCounted) {
-                // First page view of this session: increment counter
-                const response = await fetch('/counter', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' }
-                });
-                if (!response.ok) return;
-                payload = await response.json();
-                sessionStorage.setItem('lsm_visited', '1');
-            } else {
-                // Already counted this session: just read the current value
-                const response = await fetch('/counter', {
-                    cache: 'no-store',
-                    headers: { 'Accept': 'application/json' }
-                });
-                if (!response.ok) return;
-                payload = await response.json();
-            }
-
-            if (!payload || payload.success !== true || !payload.counters) return;
-
-            const lang = document.documentElement.lang;
-            const { total, today } = payload.counters;
-
-            const counterTextByLang = {
-                en: `Visits: ${total} total · ${today} today`,
-                fr: `Visites : ${total} total · ${today} aujourd'hui`
-            };
-
-            const counterText = counterTextByLang[lang] || counterTextByLang.fr;
-
-            let counterElement = footerBottom.querySelector('.footer-visit-counter');
-            if (!counterElement) {
-                counterElement = document.createElement('p');
-                counterElement.className = 'footer-text footer-visit-counter';
-                footerBottom.appendChild(counterElement);
-            }
-
-            counterElement.textContent = counterText;
-        } catch (error) {
-            // Counter is optional in non-Node environments
-            console.debug('Visit counter unavailable:', error);
-        }
     }
 
 })();
