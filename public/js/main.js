@@ -431,10 +431,29 @@
     // Cookie Consent Banner
     // ==========================================================================
 
+    function loadAnalytics() {
+        if (window.__lsmAnalyticsLoaded) return;
+
+        window.__lsmAnalyticsLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-VSV3PQZD00', { anonymize_ip: true });
+
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-VSV3PQZD00';
+        document.head.appendChild(script);
+    }
+
     function initCookieConsent() {
         const STORAGE_KEY = 'lsm_cookie_consent';
         const savedChoice = localStorage.getItem(STORAGE_KEY);
-        if (savedChoice === 'accepted' || savedChoice === 'rejected') return;
+        if (savedChoice === 'accepted') {
+            loadAnalytics();
+            return;
+        }
+        if (savedChoice === 'rejected') return;
 
         const lang = document.documentElement.lang;
 
@@ -498,6 +517,7 @@
             button.addEventListener('click', () => {
                 const choice = button.getAttribute('data-cookie-choice');
                 localStorage.setItem(STORAGE_KEY, choice);
+                if (choice === 'accepted') loadAnalytics();
                 banner.classList.add('hidden');
                 setTimeout(() => banner.remove(), 250);
             });
