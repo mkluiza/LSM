@@ -42,6 +42,7 @@
         initMobileNav();
         initLanguageMenu();
         initContactForm();
+        initDonationCopy();
         initScrollReveal();
         initSmoothScroll();
         initFooterLegalLinks();
@@ -260,6 +261,38 @@
                 submitBtn.textContent = originalText;
             }
         }
+    }
+
+    // ========================================================================
+    // Donation helpers
+    // ========================================================================
+
+    function initDonationCopy() {
+        const copyButtons = document.querySelectorAll('[data-copy-value]');
+        if (!copyButtons.length) return;
+
+        copyButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const value = button.dataset.copyValue;
+                if (!value) return;
+
+                const defaultLabel = button.dataset.copyLabel || button.textContent.trim();
+                const copiedLabel = button.dataset.copiedLabel || 'Copied';
+
+                try {
+                    await navigator.clipboard.writeText(value);
+                    button.textContent = `✓ ${copiedLabel}`;
+                    button.classList.add('copied');
+
+                    setTimeout(() => {
+                        button.textContent = defaultLabel;
+                        button.classList.remove('copied');
+                    }, 2200);
+                } catch (error) {
+                    console.warn('Unable to copy donation details:', error);
+                }
+            });
+        });
     }
 
     function showNotification(message, type = 'info') {
